@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default = {
+module.exports = {
   content: ["index.html","./src/**/*.{jsx,js}"],
   theme: {
     screens: {
@@ -10,8 +10,11 @@ export default = {
     },
     extend: {
       fontFamily: {
-      inter: ["Inter", "serif"],
-    }},
+        inter: ["Inter", "serif"],
+      },
+      colors: {
+      }
+  },
   },
   plugins: [],
 }
