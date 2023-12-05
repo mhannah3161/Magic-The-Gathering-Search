@@ -1,10 +1,10 @@
 //Requirements
-const { Collection } = require('mongoose');
+const { Deck } = require('mongoose');
 
 
 // Makes model CardInfo. Sets Each cards parameters
 
-const collection = new Collection(
+const deck = new Deck(
   {
     user_id: {
       type: DataTypes.STRING,
@@ -17,4 +17,4 @@ const collection = new Collection(
   },
 );
 
-module.exports = collection;
+module.exports = deck;
