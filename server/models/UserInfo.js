@@ -50,11 +50,6 @@ UserInfo.init(
           return newUserData;
         },
       },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
   }
 );
 
