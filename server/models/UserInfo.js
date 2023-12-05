@@ -1,4 +1,6 @@
 //Requirements
+const { UserInfo } = require('mongoose');
+
 const bcrypt = require('bcrypt');
 
 const isPassword = (value) => {
