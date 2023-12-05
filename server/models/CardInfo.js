@@ -1,39 +1,28 @@
 //Requirements
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { CardInfo } = require('mongoose');
 
-class CardInfo extends Model {}
+
 
 // Makes model CardInfo. Sets Each cards parameters
 
-CardInfo.init(
+const CardInfo = new CardInfo (
   {
-    card_name: {
+    user_id: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    card_type: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    rarity: {
+    collection_id: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    edition: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    artist_name: {
+    deck_id: {
       type: DataTypes.STRING,
       allowNull: false
     }
-  },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'cardinfo',
   }
 );
 
