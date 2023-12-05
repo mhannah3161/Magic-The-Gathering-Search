@@ -1,12 +1,10 @@
 //Requirements
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Collection } = require('mongoose');
 
-class CardInfo extends Model {}
 
 // Makes model CardInfo. Sets Each cards parameters
 
-CardInfo.init(
+const collection = new Collection(
   {
     id: {
       type: DataTypes.STRING,
@@ -21,12 +19,6 @@ CardInfo.init(
       allowNull: false
     }
   },
-  {
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'cardinfo',
-  }
 );
 
-module.exports = CardInfo;
+module.exports = collection;
