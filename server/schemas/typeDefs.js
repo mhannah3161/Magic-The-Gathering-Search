@@ -26,6 +26,13 @@ const typeDefs = `
     email: String
     orders: [Order]
   }
+
+  type Query {
+    collections: [Collection]
+    profile: Profile
+    user(id: ID): User
+    userinfo(id: ID): UserInfo 
+  }
 `;
 
 module.exports = typeDefs;
