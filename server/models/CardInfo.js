@@ -7,22 +7,45 @@ const { CardInfo } = require('mongoose');
 
 const CardInfo = new CardInfo (
   {
-    user_id: {
+    card_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    username: {
+    card_set: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    collection_id: {
+    card_type: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    deck_id: {
+    card_subtype: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    card_mana: {
       type: DataTypes.STRING,
       allowNull: false
-    }
+    },
+    card_rarity: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    card_pt: { 
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    card_pic: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    card_artist: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    card_cost: {
+      // decimal type- 
+    },
   }
 );
 

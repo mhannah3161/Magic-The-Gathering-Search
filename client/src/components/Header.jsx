@@ -1,10 +1,11 @@
 import React from 'react';
+import Dropdown from './Dropdown';
 
-function Header() {
+const Header = ({ handleChange }) => {
   return (
-      <div className='py-5 text-center'>
-        
-      </div>
+      <header>
+      <Dropdown handleChange={handleChange} />
+      </header>
   );
 }
 
