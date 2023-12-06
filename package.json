@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Card Search",
   "scripts": {
-    "test": "test",
-    "start": "node server.js"
+    "start": "node server/server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,12 +18,11 @@
   ],
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mhannah3161/Magic-The-Gathering-Search/issues"
-  },
-  "homepage": "https://github.com/mhannah3161/Magic-The-Gathering-Search#readme",
   "dependencies": {
     "@apollo/client": "^3.8.8",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.20",
     "bcrypt": "^5.1.1",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
@@ -29,12 +31,16 @@
     "mongodb": "^6.3.0",
     "node": "^21.2.0",
     "react": "^18.2.0",
-    "router-dom": "^2.2.11",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "router-dom": "^2.2.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   }
 }
