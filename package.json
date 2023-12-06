@@ -21,7 +21,7 @@
   "homepage": "https://github.com/mhannah3161/Magic-The-Gathering-Search#readme",
   "dependencies": {
     "@apollo/client": "^3.8.8",
-    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "graphql": "^16.8.1",
@@ -29,8 +29,8 @@
     "mongodb": "^6.3.0",
     "node": "^21.2.0",
     "react": "^18.2.0",
-    "router-dom": "^2.2.11",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "router-dom": "^2.2.11"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
