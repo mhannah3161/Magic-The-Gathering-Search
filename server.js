@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express"); // Imports express
 const session = require("express-session"); // Imports express-session
-const bcrypt = require("bcrypt"); // Imports bcrypt
+const bcrypt = require("bcryptjs"); // Imports bcrypt
 
 const routes = require("./controllers"); // Imports all routes
 
