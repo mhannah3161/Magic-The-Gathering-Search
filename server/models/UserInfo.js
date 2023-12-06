@@ -1,56 +1,48 @@
-//Requirements
-const { UserInfo } = require('mongoose');
-
-const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const isPassword = (value) => {
   return /^[a-zA-Z0-9]+$/.test(value) && value.length >= 6;
-}
+};
 
-
-//Creates UserIfo Model. Sets each columns paramerters
-UserInfo.init(
+const userInfoSchema = new mongoose.Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     username: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
+      minlength: 8,
       validate: {
-          min: [8],
-          isAlphanumeric: true,
-      }
+        isAlphanumeric: true,
+      },
     },
     email: {
-      type: DataTypes.STRING,
+      type: String,
       unique: true,
-      allowNull: false,
+      required: true,
       validate: {
         isEmail: true,
       },
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
+      minlength: 8,
       validate: {
-        min: [8],
         ispassword: isPassword,
-          is : /^[0-9a-zA-Z_@./#&+!-]*$/i,
-      }
-    },
-    },
-    {
-      hooks: {
-        async beforeCreate(newUserData) {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
-          return newUserData;
-        },
+        is: /^[0-9a-zA-Z_@./#&+!-]*$/i,
       },
+    },
+  },
+  {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
   }
 );
+
+const UserInfo = mongoose.model('UserInfo', userInfoSchema);
 
 module.exports = UserInfo;
