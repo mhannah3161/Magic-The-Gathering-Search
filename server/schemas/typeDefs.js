@@ -27,10 +27,10 @@ const typeDefs = `
   }
 
   type Query {
-    collections: [Collection]
-    profile: Profile
-    user(id: ID): User
-    userinfo(id: ID): UserInfo 
+    Collections: [Collection]
+    Profile: Profile
+    User(id: ID): User
+    UserInfo(id: ID): UserInfo 
   }
 `;
 
