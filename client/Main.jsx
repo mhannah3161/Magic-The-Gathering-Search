@@ -6,11 +6,11 @@ import './src/styles/index.css'
 
 import App from './App.jsx';
 import Error from './src/pages/error.jsx';
-import Homepage from './src/pages/homepage.jsx';
+import Homepage from './src/pages/mainpage.jsx';
 import Profile from './src/pages/profile.jsx';
 import Login from './src/pages/login.jsx';
 import Signup from './src/pages/signup.jsx';
-import Signout from './src/pages/signout.jsx';
+import Signout from './src/pages/logout.jsx';
 
 const router = createBrowserRouter([
     {
