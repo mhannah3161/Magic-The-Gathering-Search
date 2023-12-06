@@ -11,16 +11,17 @@ const userInfoSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 8,
-      validate: {
-        isAlphanumeric: true,
-      },
+      match: /^[a-zA-Z0-9]+$/, 
     },
     email: {
       type: String,
       unique: true,
       required: true,
       validate: {
-        isEmail: true,
+        validator: function (value) {
+          return /\S+@\S+\.\S+/.test(value); 
+        },
+        message: 'Invalid email address',
       },
     },
     password: {
@@ -28,20 +29,22 @@ const userInfoSchema = new mongoose.Schema(
       required: true,
       minlength: 8,
       validate: {
-        ispassword: isPassword,
-        is: /^[0-9a-zA-Z_@./#&+!-]*$/i,
+        validator: isPassword,
+        message: 'Password must contain at least 6 alphanumeric characters',
       },
     },
   },
   {
-    hooks: {
-      async beforeCreate(newUserData) {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
+    timestamps: true,
   }
 );
+
+userInfoSchema.pre('save', async function (next) {
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 10);
+  }
+  next();
+});
 
 const UserInfo = mongoose.model('UserInfo', userInfoSchema);
 
