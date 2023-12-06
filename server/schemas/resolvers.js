@@ -15,6 +15,24 @@ const resolvers = {
             return await User.find({}).populate('username');
         },
     },
+    Mutation: {
+        addUser: async (parent, { username, email }) => {
+          // Create and return the new School object
+          return await School.create({ username, email });
+        },
+        addCollection: async (parent, { user_id, card_id }) => {
+            // Create and return the new School object
+            return await School.create({ user_id, card_id });
+        },
+        addCard: async (parent, { card_name, card_set, card_type, card_subtype, card_mana, card_rarity, card_pt, card_pic, card_artist }) => {
+            // Create and return the new School object
+            return await School.create({ card_name, card_set, card_type, card_subtype, card_mana, card_rarity, card_pt, card_pic, card_artist  });
+        },
+        addDeck: async (parent, { user_id, card_id }) => {
+            // Create and return the new School object
+            return await School.create({ user_id, card_id });
+        },
+      },
 };
 
 module.exports = resolvers;

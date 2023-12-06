@@ -32,6 +32,10 @@ const typeDefs = `
     User(id: ID): User
     UserInfo(id: ID): UserInfo 
   }
+
+  type Mutation {
+    
+  }
 `;
 
 module.exports = typeDefs;
