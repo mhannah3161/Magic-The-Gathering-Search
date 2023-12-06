@@ -15,7 +15,7 @@ const typeDefs = `
   type UserInfo {
     _id: ID
     username: String
-    email: string
+    email: String
     password: String
   }
 
