@@ -1,20 +1,16 @@
-//Requirements
-const { Collection } = require('mongoose');
+const mongoose = require('mongoose');
 
-
-// Makes model CardInfo. Sets Each cards parameters
-
-const collection = new Collection(
-  {
-    user_id: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_id: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+const collectionSchema = new mongoose.Schema({
+  user_id: {
+    type: String,
+    required: true,
   },
-);
+  card_id: {
+    type: String,
+    required: true,
+  },
+});
 
-module.exports = collection;
+const Collection = mongoose.model('Collection', collectionSchema);
+
+module.exports = Collection;

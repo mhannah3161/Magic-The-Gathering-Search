@@ -1,52 +1,42 @@
-//Requirements
-const { CardInfo } = require('mongoose');
+const mongoose = require('mongoose');
 
-
-
-// Makes model CardInfo. Sets Each cards parameters
-
-const CardInfo = new CardInfo (
-  {
-    card_name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_set: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_type: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_subtype: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    card_mana: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_rarity: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_pt: { 
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    card_pic: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_artist: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_cost: {
-      // decimal type- 
-    },
+const cardInfoSchema = new mongoose.Schema({
+  card_name: {
+    type: String,
+    required: true,
+  },
+  card_set: {
+    type: String,
+    required: true,
+  },
+  card_type: {
+    type: String,
+    required: true,
+  },
+  card_subtype: {
+    type: String,
+  },
+  card_mana: {
+    type: String,
+    required: true,
+  },
+  card_rarity: {
+    type: String,
+    required: true,
+  },
+  card_pt: {
+    type: String,
+  },
+  card_pic: {
+    type: String,
+    required: true,
+  },
+  card_artist: {
+    type: String,
+    required: true,
   }
-);
+});
+
+const CardInfo = mongoose.model('CardInfo', cardInfoSchema);
 
 module.exports = CardInfo;
