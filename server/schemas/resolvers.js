@@ -1,4 +1,4 @@
-const { Collection, Profile, UserInfo, User } = require('../models');
+onst { Collection, Profile, UserInfo, User } = require('../models');
 
 const resolvers = {
     Query: {
