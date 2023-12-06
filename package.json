@@ -25,6 +25,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.20",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "graphql": "^16.8.1",
