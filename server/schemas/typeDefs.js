@@ -25,6 +25,13 @@ const typeDefs = `
     lastName: String
     email: String
   }
+
+  type Query {
+    collections: [Collection]
+    profile: Profile
+    user(id: ID): User
+    userinfo(id: ID): UserInfo 
+  }
 `;
 
 module.exports = typeDefs;

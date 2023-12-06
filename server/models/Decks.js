@@ -1,20 +1,16 @@
-//Requirements
-const { Deck } = require('mongoose');
+const mongoose = require('mongoose');
 
-
-// Makes model CardInfo. Sets Each cards parameters
-
-const deck = new Deck(
-  {
-    user_id: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    card_id: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+const deckSchema = new mongoose.Schema({
+  user_id: {
+    type: String,
+    required: true,
   },
-);
+  card_id: {
+    type: String,
+    required: true,
+  },
+});
 
-module.exports = deck;
+const Deck = mongoose.model('Deck', deckSchema);
+
+module.exports = Deck;
