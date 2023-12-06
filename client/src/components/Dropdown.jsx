@@ -1,6 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
-import themes from '../themes';
+import themes from '../utils/themes';
 
 const Dropdown = ({ handleChange }) => {
     const options = [];
