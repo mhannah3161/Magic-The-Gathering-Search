@@ -66,17 +66,17 @@ const cards = [
         card_artist: 'Alexander Mokhov',
         card_cost: '2.99',
     },
-    {
-        card_name:
-        card_type:
-        card_subtype: 
-        card_mana: 
-        card_rarity: 
-        card_pt: 
-        card_pic: 
-        card_artist: 
-        card_cost:
-    }
+    // {
+    //     card_name:
+    //     card_type:
+    //     card_subtype: 
+    //     card_mana: 
+    //     card_rarity: 
+    //     card_pt: 
+    //     card_pic: 
+    //     card_artist: 
+    //     card_cost:
+    // }
 ];
 
 module.exports = users, cards;
