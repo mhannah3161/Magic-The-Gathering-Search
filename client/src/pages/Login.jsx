@@ -1,16 +1,55 @@
-import Header from "../components/header"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function LoginPage(){
-    return(
-        <>
-             <Header
-             //To DO: add below in code...
-                heading="Login to your account"
-                paragraph="Don't have an account yet? "
-                linkName="Signup"
-                linkUrl="/signup"
-                />
-            
-        </>
-    )
+const Login = (props) => {
+    const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+    const onButtonClick = () => {
+        setEmailError("");
+        setPasswordError("");
+
+        if ("" === password) {
+            setPasswordError("Password is required");
+        }
+
+        if (password.length < 7) {
+            setPasswordError("Password must be at least 7 characters");
+        }
+
+    }
+    <div>
+        <div className="form-wrapper">
+            <div>
+            <Input
+                value={username}
+                placeholder="Username"
+                onChange={e => setUsername(e.target.value)}
+                size="large"
+            />
+            </div>
+            <div>
+            <Input
+                value={password}
+                placeholder="Password"
+                onChange={e => setPassword(e.target.value)}
+                size="large"
+                type="password"
+            />
+            <label>{passwordError}</label>
+            </div>
+        </div>
+        <div className="button-wrapper">
+            <Button
+                onClick={onButtonClick}
+                type="primary"
+                size="large"
+            >
+                Login
+            </Button>
+        </div>
+        <br/>
+        <p>Don't have an account?<Link to="/Signup">Signup!</Link></p>
+    </div>
 }
+
+export default Login;
