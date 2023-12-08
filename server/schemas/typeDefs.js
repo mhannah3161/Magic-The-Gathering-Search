@@ -12,7 +12,6 @@ const typeDefs = `
     deck_id: Int
   }
 
-
   type UserInfo {
     _id: ID
     username: String
@@ -20,36 +19,15 @@ const typeDefs = `
     password: String
   }
 
-
-  type Card {
-    _id: ID
-    card_name: String
-    card_set: String
-    card_type: String
-    card_subtype: String
-    card_mana: String
-    card_rarity: String
-    card_pt: String
-    card_pic: String
-    card_artist: String
-  }
-
-  type Deck {
-    _id: ID
-    UserInfo_id: ID
-    card_id: Int
-  }
-
   type Query {
     Collections: [Collection]
     Profile: Profile
-    UserInfo(id: ID): UserInfo 
+    UserInfo(UserInfo_id: ID): UserInfo
   }
 
   type Mutation {
-    addCollection(UserInfo_id: ID, card_id: Int): Collection
-    addCard(card_name: String, card_set: String, card_type: String, card_subtype: String, card_mana: String, card_rarity: String, card_pt: String, card_pic: String, card_artist: String): Card
-    addDeck(UserInfo_id: ID, card_id: Int): Deck
+    addCollection(username: String, card_id: Int): Collection
+    addCard(_id: ID): UserInfo
   }
 `;
 
