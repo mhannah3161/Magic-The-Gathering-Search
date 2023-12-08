@@ -1,24 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Signup() {
-        
-        return (
-        <>
+export const Login = () => {
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+    const onButtonClick = () => {
+        setEmailError("");
+        setPasswordError("");
+
+        if ("" === email) {
+            setEmailError("Email is required");
+        }
+
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(email)) {
+            setEmailError("Invalid email address");
+        }
+
+        if ("" === password) {
+            setPasswordError("Password is required");
+        }
+
+        if (password.length < 7) {
+            setPasswordError("Password must be at least 7 characters");
+        }
+
+    }
+
+    <div>
+        <div className="form-wrapper">
             <div>
-                <form>
-                    <label>Username</label>
-                    <input type="text" placeholder="Username"/>
-                    <label>Password</label>
-                    <input type="password" placeholder="Password"/>
-                    <label>Confirm Password</label>
-                    <input type="password" placeholder="Confirm Password"/>
-                    <label>Email</label>
-                    <input type="email" placeholder="Email"/>
-                    <label>Confirm Email</label>
-                    <input type="email" placeholder="Confirm Email"/>
-                    <button type="submit">Signup!!!</button>
-                </form>
+            <Input
+                value={username}
+                placeholder="Username"
+                onClick={e => setUsername(e.target.value)}
+                size="large"
+                />
             </div>
-        </>
-        );
+            <div>
+            <Input
+                value={password}
+                placeholder="Password"
+                onClick={e => setPassword(e.target.value)}
+                size="large"
+                type="password"
+            />
+            <label>{passwordError}</label>
+            </div>
+            <div>
+            <Input
+                value={email}
+                placeholder="Email"
+                onClick={e => setEmail(e.target.value)}
+                size="large"
+                type="email"
+                />
+                <label>{emailError}</label>
+            </div>
+        </div>
+        <div className="button-wrapper">
+            <Button
+                onClick={onButtonClick}
+                type="primary"
+                size="large"
+            >
+                Create Login
+            </Button>
+        </div>
+        <br/>
+        <p>Already have an account?<Link to="/Login">Login!</Link></p>
+    </div>
 }
