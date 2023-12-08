@@ -1,30 +1,30 @@
 const users = [
     {
-        id: 1,
+        _id: 1,
         username: "Jimmy",
         email: "ABC123",
         password: "Timmy123"
     },
     {
-        id: 2,
+        _id: 2,
         username: "Stan",
         email: "XYZ123",
         password: "Kyle123"
     },
     {
-        id: 3,
+        _id: 3,
         username: "Kenny",
         email: "Kenny@kenny.com",
         password: "Kenny123"
     },
     {
-        id: 4,
+        _id: 4,
         username: "Cartman",
         email: "Cartman@Cartman.com",
         password: "Cartman123"
     },
     {
-        id: 5,
+        _id: 5,
         username: "Butters",
         email: "Butters@butters.com",
         password: "Butters123"
@@ -66,17 +66,6 @@ const cards = [
         card_artist: 'Alexander Mokhov',
         card_cost: '2.99',
     },
-    // {
-    //     card_name:
-    //     card_type:
-    //     card_subtype: 
-    //     card_mana: 
-    //     card_rarity: 
-    //     card_pt: 
-    //     card_pic: 
-    //     card_artist: 
-    //     card_cost:
-    // }
 ];
 
 module.exports = users, cards;
