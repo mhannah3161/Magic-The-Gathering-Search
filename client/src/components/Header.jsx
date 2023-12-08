@@ -3,7 +3,7 @@ import Dropdown from './Dropdown';
 
 const Header = ({ handleChange }) => {
   return (
-      <header>
+      <header className='background-color'>
       <Dropdown handleChange={handleChange} />
       </header>
   );

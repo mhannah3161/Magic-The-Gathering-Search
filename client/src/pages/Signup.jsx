@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Login = () => {
+export const Signup = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
@@ -31,7 +31,7 @@ export const Login = () => {
     <div>
         <div className="form-wrapper">
             <div>
-            <Input
+            <input
                 value={username}
                 placeholder="Username"
                 onClick={e => setUsername(e.target.value)}
@@ -39,7 +39,7 @@ export const Login = () => {
                 />
             </div>
             <div>
-            <Input
+            <input
                 value={password}
                 placeholder="Password"
                 onClick={e => setPassword(e.target.value)}
@@ -49,7 +49,7 @@ export const Login = () => {
             <label>{passwordError}</label>
             </div>
             <div>
-            <Input
+            <input
                 value={email}
                 placeholder="Email"
                 onClick={e => setEmail(e.target.value)}
@@ -72,3 +72,5 @@ export const Login = () => {
         <p>Already have an account?<Link to="/Login">Login!</Link></p>
     </div>
 }
+
+export default Signup;

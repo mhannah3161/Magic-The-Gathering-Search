@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
     
@@ -6,10 +8,13 @@ export default function Navbar() {
       <>
         <div>
           <input type="text" placeholder='Search'/>
-          <a>Login</a>
-          <a>Logout</a>
-          <a>Collections</a>
-          <a>Decks</a>
+          <button>Search</button>
+        </div>
+        <div>
+          <button><Link to="/Login">Login!</Link></button>
+          <button>Logout</button>
+          <button><Link to="/collections">Collections</Link></button>
+          <button><Link to="/decks">Decks</Link></button>
         </div>
       </>
     );

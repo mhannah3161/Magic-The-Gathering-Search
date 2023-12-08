@@ -20,7 +20,7 @@ const Login = (props) => {
     <div>
         <div className="form-wrapper">
             <div>
-            <Input
+            <input
                 value={username}
                 placeholder="Username"
                 onChange={e => setUsername(e.target.value)}
@@ -28,7 +28,7 @@ const Login = (props) => {
             />
             </div>
             <div>
-            <Input
+            <input
                 value={password}
                 placeholder="Password"
                 onChange={e => setPassword(e.target.value)}
