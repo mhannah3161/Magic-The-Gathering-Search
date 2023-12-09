@@ -13,7 +13,7 @@ const typeDefs = `
   }
 
   type UserInfo {
-    _id: ID
+    UserInfo_id: ID
     username: String
     email: String
     password: String
@@ -22,7 +22,7 @@ const typeDefs = `
   type Query {
     Collections: [Collection]
     Profile: Profile
-    UserInfo(UserInfo_id: ID): UserInfo
+    UserInfo: [UserInfo]
   }
 
   type Mutation {
