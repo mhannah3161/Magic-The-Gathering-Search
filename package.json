@@ -30,13 +30,16 @@
     "express-session": "^1.17.3",
     "graphql": "^16.8.1",
     "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.2",
     "node": "^21.2.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0",
     "react-select": "^5.8.0",
-    "router-dom": "^2.2.11"
+    "router-dom": "^2.2.11",
+    "styled-components": "^6.1.1",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
