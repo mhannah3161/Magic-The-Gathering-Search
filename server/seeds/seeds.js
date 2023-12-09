@@ -1,3 +1,7 @@
+const mongoose = require('mongoose');
+const UserInfo = require('../../server/models/Profile'); 
+const Collection = require('../../server/models/Collections');
+
 const users = [
     {
         _id: 1,
@@ -68,4 +72,37 @@ const cards = [
     },
 ];
 
-module.exports = users, cards;
+const seedDatabase = async () => {
+  try {
+    // Clear existing data
+    await UserInfo.deleteMany({});
+    await Collection.deleteMany({});
+    await Profile.deleteMany({});
+
+    // Seed users
+    const seededUsers = await UserInfo.create(users);
+
+    // Seed collections (assuming you have a Collection model)
+    const seededCollections = await Collection.create(cards);
+
+    // Seed profiles
+    const seededProfiles = await Profile.create([
+      {
+        UserInfo_id: seededUsers[0]._id, // Assuming UserInfo_id is related to a user
+        deck_id: mongoose.Types.ObjectId(), // Auto-generate ObjectId
+        collection_id: seededCollections[0]._id, // Assuming collection_id is related to a collection
+      },
+      // ... other profiles
+    ]);
+
+    console.log('Database seeded successfully!');
+  } catch (error) {
+    console.error('Error seeding database:', error);
+  } finally {
+    // Close the MongoDB connection when seeding is complete
+    mongoose.connection.close();
+  }
+};
+
+// Call the seeding function
+seedDatabase();
