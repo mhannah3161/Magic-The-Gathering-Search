@@ -9,7 +9,6 @@ import '../utils/style.css'
 
 
 export default function Navbar({ selectedTheme }) {
-  console.log(selectedTheme)
     return (
       <Box 
       className={'topNav'}

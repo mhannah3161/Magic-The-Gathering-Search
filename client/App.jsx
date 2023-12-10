@@ -38,7 +38,7 @@ backgroundSize: 'cover' }}>
     <Navbar selectedTheme={selectedTheme} />
     <Header selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} style={{fontFamily: selectedTheme.font}}/>
     <Outlet />
-    <Footer />
+    <Footer selectedTheme={selectedTheme} />
     {/* </ThemeProvider> */}
 {/* } */}
     </div>
