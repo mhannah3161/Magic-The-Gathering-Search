@@ -6,7 +6,8 @@
             "background-color": "#767FA3",
             "color": "#97A3D1",
             "color-text": "white",
-            "button-color": "#181E33"
+            "button-color": "#181E33",
+            "gradient": "linear-gradient(#97A3D1, #767FA3)"
         },
         "font": "Tinos"
     },
@@ -17,7 +18,8 @@
             "background-color": "#EB9F82",
             "color": "#B00B00",
             "colorText": "#000000",
-            "button-color": "#FFFFFF"
+            "button-color": "#FFFFFF",
+            "gradient": "linear-gradient(#B00B00, #EB9F82)"
         },
         "font": "Tinos"
     },
@@ -28,7 +30,8 @@
             "background-color": "#a69f9d",
             "color": "#5d1670",
             "color-text": "#F9FAF4",
-            "button-color": "#9974a3"
+            "button-color": "#9974a3",
+            "gradient": "linear-gradient(#5d1670, #a69f9d)"
         },
         "font": "Tinos"
     },
@@ -39,7 +42,8 @@
             "background-color": "#b3ceea",
             "color": "#0e67ab",
             "color-text": "#000000",
-            "button-color": ""
+            "button-color": "#1DAD95",
+            "gradient": "linear-gradient(#0e67ab, #b3ceea)"
         },
         "font": "Ubuntu"
     },
@@ -50,7 +54,8 @@
             "background-color": "#C4F2CA",
             "color": "#00733E",
             "color-text": "#000000",
-            "button-color": "#F2CB79"
+            "button-color": "#16D53C",
+            "gradient": "linear-gradient(#00733e, #c4f2ca)"
         },
         "font": "Ubuntu"
     },
@@ -61,7 +66,8 @@
             "background-color": "#F8E7B9",
             "color": "#F9FAF4",
             "color-text": "#000000",
-            "button-color": "#786942"
+            "button-color": "#F0C000",
+            "gradient": "linear-gradient(#f9faf4, #f8e7b9)"
         },
         "font": "Ubuntu"
     }

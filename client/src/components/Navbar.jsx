@@ -13,7 +13,7 @@ export default function Navbar({ selectedTheme }) {
     return (
       <Box 
       className={'topNav'}
-      style= {{backgroundColor: selectedTheme.colors["background-color"]}}
+      style= {{background: selectedTheme.colors.gradient}}
       >
       <Box 
       display="flex"
