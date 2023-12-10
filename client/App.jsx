@@ -48,13 +48,11 @@ const App = () => {
             element={
               <>
                 <HomePage />
-                {location.pathname !== "/login" && (
-                  <Footer selectedTheme={selectedTheme} />
-                )}
               </>
             }
           />
         </Routes>
+            <Footer selectedTheme={selectedTheme} />                
       </div>
     </>
   );
