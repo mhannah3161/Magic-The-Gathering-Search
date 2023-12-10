@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
+
 
 const Login = (props) => {
     const [password, setPassword] = useState("");
@@ -18,10 +20,10 @@ const Login = (props) => {
 
     }
     <div>
-        <div className="form-wrapper">
+        <div className="form-wrapper loginPage">
             <div>
             <input
-                value={username}
+                value="username"
                 placeholder="Username"
                 onChange={e => setUsername(e.target.value)}
                 size="large"
@@ -29,7 +31,7 @@ const Login = (props) => {
             </div>
             <div>
             <input
-                value={password}
+                value="password"
                 placeholder="Password"
                 onChange={e => setPassword(e.target.value)}
                 size="large"
