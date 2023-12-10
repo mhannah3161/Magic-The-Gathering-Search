@@ -4,6 +4,7 @@ body{
 }
 .topNav{
     padding-top: 10px;
+    padding-bottom: 10px;
     /* background-image: linear-gradient(to right, white, black); */
 }
 /* .navbar {
