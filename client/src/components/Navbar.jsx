@@ -13,7 +13,7 @@ export default function Navbar({ selectedTheme }) {
     return (
       <Box 
       className={ selectedTheme.colors["background-color"]+ ' topNav'}
-      style= {{background-image: linear-gradient (to right, selectedTheme.colors["background-color"], selectedTheme.colors["background-color"]}}
+      style= {{backgroundColor: selectedTheme.colors["background-color"]}}
       >
       <Box 
       display="flex"
@@ -33,7 +33,7 @@ export default function Navbar({ selectedTheme }) {
           autoComplete="off"
           justifyContent="center"
           >
-            <TextField label="Seek" style={{backgroundColor: selectedTheme.colors["button-color"]}} focused />
+            <TextField label="Seek"  focused />
           </Box>
         </Box>
         <Box
