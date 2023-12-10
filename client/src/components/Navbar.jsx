@@ -13,7 +13,7 @@ export default function Navbar({ selectedTheme }) {
     return (
       <Box 
       className={ selectedTheme.colors["background-color"]+ ' topNav'}
-      style= {{backgroundColor: selectedTheme.colors["background-color"]}}
+      style= {{background-image: linear-gradient (to right, selectedTheme.colors["background-color"], selectedTheme.colors["background-color"]}}
       >
       <Box 
       display="flex"
@@ -33,7 +33,7 @@ export default function Navbar({ selectedTheme }) {
           autoComplete="off"
           justifyContent="center"
           >
-            <TextField label="Seek" color='' focused />
+            <TextField label="Seek" style={{backgroundColor: selectedTheme.colors["button-color"]}} focused />
           </Box>
         </Box>
         <Box
@@ -42,9 +42,9 @@ export default function Navbar({ selectedTheme }) {
         className='navbuts'
         >
           <Button variant="contained" style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/Login" >Login!</Link></Button>
-          <Button variant='contained' className='buttonNav'>Logout</Button>
-          <Button variant='contained' className='buttonNav'><Link className='linkStyle' to="/collections" >Collections</Link></Button>
-          <Button variant='contained' className='buttonNav'><Link className='linkStyle' to="/decks">Decks</Link></Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'>Logout</Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/collections" >Collections</Link></Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/decks">Decks</Link></Button>
         </Box>
         </Box>
             </Box>

@@ -3,10 +3,10 @@
         "id": "T_001",
         "name": "Devoid",
         "colors":{
-            "background-color": "#000000",
-            "color": "#000000",
-            "color-text": "#000000",
-            "button-color": ""
+            "background-color": "#767FA3",
+            "color": "#97A3D1",
+            "color-text": "white",
+            "button-color": "#181E33"
         },
         "font": "Tinos"
     },
