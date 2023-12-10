@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const isPassword = (value) => {
-  return /^[a-zA-Z0-9]+$/.test(value) && value.length >= 6;
+  return /^[a-zA-Z0-9]+$/.test(value) && value.length >= 5;
 };
 
 const userInfoSchema = new mongoose.Schema(
@@ -10,7 +10,7 @@ const userInfoSchema = new mongoose.Schema(
     username: {
       type: String,
       required: true,
-      minlength: 8,
+      minlength: 5,
       match: /^[a-zA-Z0-9]+$/, 
     },
     email: {
@@ -27,10 +27,10 @@ const userInfoSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      minlength: 8,
+      minlength: 5,
       validate: {
         validator: isPassword,
-        message: 'Password must contain at least 6 alphanumeric characters',
+        message: 'Password must contain at least 5 alphanumeric characters',
       },
     },
   },
