@@ -32,7 +32,7 @@ export default function Navbar({ selectedTheme }) {
           autoComplete="off"
           justifyContent="center"
           >
-            <TextField label="Seek"  focused />
+            <TextField label="Seek" focused />
           </Box>
         </Box>
         <Box

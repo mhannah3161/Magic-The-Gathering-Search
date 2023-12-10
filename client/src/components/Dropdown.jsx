@@ -15,9 +15,12 @@ const Dropdown = ({ selectedTheme, setSelectedTheme }) => {
 
     return (
         <div className='theme-dropdown DD'>
-            <span>Choose Your Mana</span>
+            <span 
+            className='DDA askMana'
+            style={{backgroundColor: selectedTheme.colors["background-color"]}}
+            >Choose Your Mana</span>
             <Select 
-            className='select-filter'
+            className='select-filter DDA DDM'
             onChange={(e) => {
                 setSelectedTheme(themes[e.value])
             }}
