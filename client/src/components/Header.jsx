@@ -1,10 +1,11 @@
 import React from 'react';
 import Dropdown from './Dropdown';
 
-const Header = ({ handleChange }) => {
+
+const Header = ({ selectedTheme, setSelectedTheme }) => {
   return (
       <header className='background-color'>
-      <Dropdown handleChange={handleChange} />
+      <Dropdown selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
       </header>
   );
 }

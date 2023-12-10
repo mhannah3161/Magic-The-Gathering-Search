@@ -1,11 +1,11 @@
 import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './src/utils/themes.js';
+import './src/pics/Main_bg.png';
 
 import App from './App.jsx';
-import Error from './src/pages/error.jsx';
-import Homepage from './src/pages/homepage.jsx';
+import Error from './src/pages/Error.jsx';
+import Homepage from './src/pages/HomePage.jsx';
 import ProfilePage from './src/pages/ProfilePage.jsx';
 import Login from './src/pages/Login.jsx';
 import Signup from './src/pages/Signup.jsx';

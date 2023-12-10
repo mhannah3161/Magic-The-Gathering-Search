@@ -1,0 +1,68 @@
+{
+    "devoid": {
+        "id": "T_001",
+        "name": "Devoid",
+        "colors":{
+            "background-color": "#000000",
+            "color": "#000000",
+            "color-text": "#000000",
+            "button-color": ""
+        },
+        "font": "Tinos"
+    },
+    "mountain": {
+        "id": "T_002",
+        "name": "Mountain",
+        "colors":{
+            "background-color": "#EB9F82",
+            "color": "#B00B00",
+            "color-text": "#000000",
+            "button-color": "#331B1A"
+        },
+        "font": "Tinos"
+    },
+    "swamp": {
+        "id": "T_003",
+        "name": "Swamp",
+        "colors":{
+            "background-color": "#a69f9d",
+            "color": "#5d1670",
+            "color-text": "#F9FAF4",
+            "button-color": "#9974a3"
+        },
+        "font": "Tinos"
+    },
+    "island": {
+        "id": "T_004",
+        "name": "Island",
+        "colors":{
+            "background-color": "#b3ceea",
+            "color": "#0e67ab",
+            "color-text": "#000000",
+            "button-color": ""
+        },
+        "font": "Ubuntu"
+    },
+    "forest": {
+        "id": "T_005",
+        "name": "Forest",
+        "colors":{
+            "background-color": "#C4F2CA",
+            "color": "#00733E",
+            "color-text": "#000000",
+            "button-color": "#F2CB79"
+        },
+        "font": "Ubuntu"
+    },
+    "plain": {
+        "id": "T_006",
+        "name": "Plain",
+        "colors":{
+            "background-color": "#F8E7B9",
+            "color": "#F9FAF4",
+            "color-text": "#000000",
+            "button-color": "#786942"
+        },
+        "font": "Ubuntu"
+    }
+}

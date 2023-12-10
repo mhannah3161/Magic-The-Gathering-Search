@@ -1,10 +1,21 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import pic from '../pics/paper.png'
 
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome to the Home Page!</h1>
-      {/* Add your homepage content here */}
+      <Box
+        display="flex"
+        justifyContent="center"
+        style={{
+          backgroundImage: `url(${pic})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          height: '200vh',
+        }}
+      />
+
     </div>
   );
 };
