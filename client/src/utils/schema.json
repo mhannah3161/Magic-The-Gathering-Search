@@ -5,7 +5,7 @@
         "colors":{
             "background-color": "#767FA3",
             "color": "#97A3D1",
-            "color-text": "white",
+            "colorText": "#FFFFFF",
             "button-color": "#181E33",
             "gradient": "linear-gradient(#97A3D1, #767FA3)"
         },
@@ -29,7 +29,7 @@
         "colors":{
             "background-color": "#a69f9d",
             "color": "#5d1670",
-            "color-text": "#F9FAF4",
+            "colorText": "#FFFFFF",
             "button-color": "#9974a3",
             "gradient": "linear-gradient(#5d1670, #a69f9d)"
         },
@@ -41,7 +41,7 @@
         "colors":{
             "background-color": "#b3ceea",
             "color": "#0e67ab",
-            "color-text": "#000000",
+            "colorText": "#FFFFFF",
             "button-color": "#1DAD95",
             "gradient": "linear-gradient(#0e67ab, #b3ceea)"
         },
@@ -53,7 +53,7 @@
         "colors":{
             "background-color": "#C4F2CA",
             "color": "#00733E",
-            "color-text": "#000000",
+            "colorText": "#FFFFFF",
             "button-color": "#16D53C",
             "gradient": "linear-gradient(#00733e, #c4f2ca)"
         },
@@ -65,7 +65,7 @@
         "colors":{
             "background-color": "#F8E7B9",
             "color": "#F9FAF4",
-            "color-text": "#000000",
+            "colorText": "#FFFFFF",
             "button-color": "#F0C000",
             "gradient": "linear-gradient(#f9faf4, #f8e7b9)"
         },
