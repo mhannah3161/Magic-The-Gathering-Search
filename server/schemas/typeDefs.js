@@ -12,6 +12,18 @@ const typeDefs = `
     deck_id: Int
   }
 
+  type CardInfo {
+    card_name: String
+    card_type: String
+    card_subtype: String
+    card_mana: String
+    card_rarity: String
+    card_pt: String
+    card_pic: String
+    card_artist: String
+    card_cost: String
+  }
+
   type UserInfo {
     UserInfo_id: ID
     username: String
@@ -23,6 +35,7 @@ const typeDefs = `
     Collections: [Collection]
     Profile: Profile
     UserInfo: [UserInfo]
+    CardInfo: [CardInfo]
   }
 
   type Mutation {

@@ -1,0 +1,77 @@
+body{
+    margin: 0px;
+    padding:0px;
+}
+.topNav{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* background-image: linear-gradient(to right, white, black); */
+}
+/* .navbar {
+    background-image: linear-gradient(to right, white, black);
+} */
+.buttonNav {
+    /* background-color: #442959; */
+    border: none;
+    /* color: white; */
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: none;
+}
+/* .buttonNav:hover {
+    background-color: #AE43D9;
+    color: black;
+} */
+.buttonNav:Link {
+    text-decoration: none;
+    /* color: white; */
+}
+.linkStyle {
+    text-decoration: none;
+    /* color: white; */
+}
+/* .linkStyle:hover {
+    color: black;
+} */
+.DD {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+.askMana {
+    padding-top: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: 'Brush Script MT', cursive;
+    font-size: larger;
+}
+.DDA {
+    margin: 10px;
+    border-radius: 5px;
+}
+.DDM {
+    width: 200px;
+}
+
+.footer {
+    /* background-image: linear-gradient(to right, #3D3D3D, black); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px 20px 0px 0px;
+}
+.footer-text{
+    /* color: white; */
+    display: flex;
+}
+.footer-api{
+    /* color: white; */
+    display: flex;
+}
+.footer-link{
+    /* color: white; */
+    text-decoration: none;
+}

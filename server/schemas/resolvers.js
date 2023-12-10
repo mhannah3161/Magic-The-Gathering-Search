@@ -1,4 +1,4 @@
-const { Collection, Profile, UserInfo } = require('../models');
+const { Collection, Profile, UserInfo, CardInfo } = require('../models');
 
 const resolvers = {
   Query: {
@@ -13,6 +13,9 @@ const resolvers = {
         return UserInfo.findById(UserInfo_id);
       }
         return UserInfo.find({});
+    },
+    CardInfo: async () => {
+      return await CardInfo.find({});
     },
   },
   Mutation: {

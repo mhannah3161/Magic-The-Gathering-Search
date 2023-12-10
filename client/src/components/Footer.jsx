@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Footer() {
+function Footer({ selectedTheme }) {
   return (
-      <div className='py-5 text-center'>
-        <p className='text-sm mt-2 opacity-50'>
+      <div className='footer'>
+        <p style={{color:selectedTheme.colors.colorText}} className='footer-text'>
         &copy; {new Date().getFullYear()} Anthony Ciccone, Jacob Campa & Michael Hannah All rights reserved.
         </p> <br/>
-        <p className='text-sm mt-2 opacity-50'>
-            API: <a href="https://https://magicthegathering.io/">Magic The Gathering.io</a>
+        <p style={{color:selectedTheme.colors.colorText}} className='footer-api'>
+            API: <a style={{color:selectedTheme.colors.colorText}} className='footer-link' href="https://https://magicthegathering.io/">Magic The Gathering.io</a>
         </p>
 
       </div>

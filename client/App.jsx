@@ -1,36 +1,49 @@
+import { globalStyles } from './src/utils/globalStyles';
 import { Outlet } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+// import Webfont from 'webfontloader';
 import Header from './src/components/Header.jsx';
 import Navbar from './src/components/Navbar.jsx';
 import Footer from './src/components/Footer.jsx';
+import BGimg from './src/pics/forest_bg.png';
+import {useTheme} from './src/utils/useTheme.js';
+import themes from './src/utils/schema.json';
 
-function App() {
-    const [theme, setTheme] = useState('');
 
-    const handleChange = (selectedTheme) => {
-        setTheme(themes[selectedTheme.value]);
-    };
+const App = () => {
+    // const {theme, themeLoaded, getFonts} = useTheme();
+    const [selectedTheme, setSelectedTheme] = useState(themes["devoid"]);
 
-    const refCallback = (node) => {
-        if (node) {
-            theme && 
-            Object.keys(theme).forEach((element) => {
-                node.style.setProperty(element, theme[element], 'important');
-                if (element === 'background-color' || element === 'background') {
-                    document.body.style.background = theme[element];
-                }
-            });
-        }
-    }
+    // useEffect(() => {
+    //     setSelectedTheme(theme);
+    // }, [themeLoaded]);
+
+    // useEffect(() => {
+    //     Webfont.load({
+    //         google: {
+    //             families: getFonts()
+    //         }
+    // });
+// });
 
 
     return (
-        <div ref={refCallback} className='main-section'>
-            <Header handleChange={handleChange} />
-            <Navbar />
-            <Outlet />
-            <Footer />
-        </div>
+<>
+<div style={{ backgroundImage: `url(${BGimg})`,
+backgroundSize: 'cover' }}>
+{/* { */}
+    {/* // themeLoaded && <ThemeProvider theme={selectedTheme}>
+    // <globalStyles /> */}
+    <Navbar selectedTheme={selectedTheme} />
+    <Header selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} style={{fontFamily: selectedTheme.font}}/>
+    <Outlet />
+    <Footer selectedTheme={selectedTheme} />
+    {/* </ThemeProvider> */}
+{/* } */}
+    </div>
+</>
+
     )
 };
 

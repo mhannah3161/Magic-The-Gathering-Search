@@ -1,8 +1,9 @@
 import React from 'react';
 import Select from 'react-select';
-import themes from '../utils/themes';
+import themes from '../utils/schema.json'
 
-const Dropdown = ({ handleChange }) => {
+
+const Dropdown = ({ selectedTheme, setSelectedTheme }) => {
     const options = [];
 
     Object.keys(themes).forEach((theme) => {
@@ -13,12 +14,27 @@ const Dropdown = ({ handleChange }) => {
     });
 
     return (
-        <div className='theme-dropdown'>
-            <span>Choose Your Mana</span>
-            <Select
-            className='select-filter'
-            onChange={handleChange}
+        <div className='theme-dropdown DD'>
+            <span 
+            className='DDA askMana'
+            style={{backgroundColor: selectedTheme.colors["background-color"]}}
+            >Choose Your Mana</span>
+            <Select 
+            className='select-filter DDA DDM'
+            onChange={(e) => {
+                setSelectedTheme(themes[e.value])
+            }}
+            value={selectedTheme}
             options={options}
+            // theme={(theme) => ({
+            //     ...theme,
+            //     borderRadius: 3,
+            //     colors: {
+            //         ...theme.colors,
+            //         primary25: '#7573CD',
+            //         primary: '#1E1C79',
+            //     },
+            // })}
             />
         </div>
     )
