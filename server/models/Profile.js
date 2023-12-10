@@ -11,11 +11,11 @@ const profileSchema = new mongoose.Schema({
   },
   collection_id: {
     type: String,
-    required: true,
+    required: false,
   },
   deck_id: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 

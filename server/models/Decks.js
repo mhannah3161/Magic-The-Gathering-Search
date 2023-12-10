@@ -7,7 +7,7 @@ const deckSchema = new mongoose.Schema({
   },
   card_id: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
