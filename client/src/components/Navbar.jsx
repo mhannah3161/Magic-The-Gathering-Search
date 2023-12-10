@@ -12,7 +12,7 @@ export default function Navbar({ selectedTheme }) {
   console.log(selectedTheme)
     return (
       <Box 
-      className={ selectedTheme.colors["background-color"]+ ' topNav'}
+      className={'topNav'}
       style= {{backgroundColor: selectedTheme.colors["background-color"]}}
       >
       <Box 
@@ -41,10 +41,10 @@ export default function Navbar({ selectedTheme }) {
         flexDirection="row"
         className='navbuts'
         >
-          <Button variant="contained" style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/Login" >Login!</Link></Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'>Logout</Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/collections" >Collections</Link></Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' to="/decks">Decks</Link></Button>
+          <Button variant="contained" style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/Login" >Login!</Link></Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"], color:selectedTheme.colors.colorText}} className='buttonNav'>Logout</Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/collections" >Collections</Link></Button>
+          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/decks">Decks</Link></Button>
         </Box>
         </Box>
             </Box>

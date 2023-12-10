@@ -16,8 +16,8 @@
         "colors":{
             "background-color": "#EB9F82",
             "color": "#B00B00",
-            "color-text": "#000000",
-            "button-color": "#331B1A"
+            "colorText": "#000000",
+            "button-color": "#FFFFFF"
         },
         "font": "Tinos"
     },

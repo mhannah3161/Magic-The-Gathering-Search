@@ -4,15 +4,15 @@ body{
 }
 .topNav{
     padding-top: 10px;
-    background-image: linear-gradient(to right, white, black);
+    /* background-image: linear-gradient(to right, white, black); */
 }
-.navbar {
+/* .navbar {
     background-image: linear-gradient(to right, white, black);
-}
+} */
 .buttonNav {
-    background-color: #442959;
+    /* background-color: #442959; */
     border: none;
-    color: white;
+    /* color: white; */
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
@@ -20,40 +20,40 @@ body{
     font-size: 16px;
     text-decoration: none;
 }
-.buttonNav:hover {
+/* .buttonNav:hover {
     background-color: #AE43D9;
     color: black;
-}
+} */
 .buttonNav:Link {
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }
 .linkStyle {
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }
-.linkStyle:hover {
+/* .linkStyle:hover {
     color: black;
-}
+} */
 .DD {
-    background-image: linear-gradient(to right, white, black);
+    /* background-image: linear-gradient(to right, white, black); */
 }
 .footer {
-    background-image: linear-gradient(to right, #3D3D3D, black);
+    /* background-image: linear-gradient(to right, #3D3D3D, black); */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-radius: 20px 20px 0px 0px;
 }
 .footer-text{
-    color: white;
+    /* color: white; */
     display: flex;
 }
 .footer-api{
-    color: white;
+    /* color: white; */
     display: flex;
 }
 .footer-link{
-    color: white;
+    /* color: white; */
     text-decoration: none;
 }
