@@ -7,7 +7,8 @@
             "color": "#97A3D1",
             "colorText": "#FFFFFF",
             "button-color": "#181E33",
-            "gradient": "linear-gradient(#97A3D1, #767FA3)"
+            "gradient": "linear-gradient(#97A3D1, #767FA3)",
+            "backgroundImages": "url('../pics/forest_bg.png')"
         },
         "font": "Tinos"
     },
@@ -19,7 +20,8 @@
             "color": "#B00B00",
             "colorText": "#000000",
             "button-color": "#FFFFFF",
-            "gradient": "linear-gradient(#B00B00, #EB9F82)"
+            "gradient": "linear-gradient(#B00B00, #EB9F82)",
+            "backgroundImages": "url('../pics/mountain.png)"
         },
         "font": "Tinos"
     },
@@ -31,7 +33,8 @@
             "color": "#5d1670",
             "colorText": "#FFFFFF",
             "button-color": "#9974a3",
-            "gradient": "linear-gradient(#5d1670, #a69f9d)"
+            "gradient": "linear-gradient(#5d1670, #a69f9d)",
+            "backgroundImages": "url('../pics/swamp.png)"
         },
         "font": "Tinos"
     },
@@ -43,7 +46,8 @@
             "color": "#0e67ab",
             "colorText": "#FFFFFF",
             "button-color": "#1DAD95",
-            "gradient": "linear-gradient(#0e67ab, #b3ceea)"
+            "gradient": "linear-gradient(#0e67ab, #b3ceea)",
+            "backgroundImages": "url('../pics/island.png)"
         },
         "font": "Ubuntu"
     },
@@ -55,7 +59,8 @@
             "color": "#00733E",
             "colorText": "#FFFFFF",
             "button-color": "#16D53C",
-            "gradient": "linear-gradient(#00733e, #c4f2ca)"
+            "gradient": "linear-gradient(#00733e, #c4f2ca)",
+            "backgroundImages": "url('../pics/forest.png)"
         },
         "font": "Ubuntu"
     },
@@ -67,7 +72,8 @@
             "color": "#F9FAF4",
             "colorText": "#FFFFFF",
             "button-color": "#F0C000",
-            "gradient": "linear-gradient(#f9faf4, #f8e7b9)"
+            "gradient": "linear-gradient(#f9faf4, #f8e7b9)",
+            "backgroundImages": "url('../pics/plain.png)"
         },
         "font": "Ubuntu"
     }

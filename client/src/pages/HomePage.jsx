@@ -2,9 +2,11 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import pic from '../pics/paper.png'
 
-const HomePage = () => {
+const HomePage = ({selectedTheme}) => {
   return (
-    <div>
+    <div 
+    style={{ backgroundImage: selectedTheme.colors.backgroundImages}}
+    >
       <Box
         display="flex"
         justifyContent="center"
