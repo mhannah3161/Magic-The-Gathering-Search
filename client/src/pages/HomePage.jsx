@@ -2,19 +2,22 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import pic from '../pics/paper.png'
 
-const HomePage = ({selectedTheme}) => {
+const HomePage = () => {
   return (
     <div 
-    style={{ backgroundImage: selectedTheme.colors.backgroundImages}}
+    style={{
+      height: '200vh',
+      width: '100%',
+    }}
     >
       <Box
         display="flex"
         justifyContent="center"
         style={{
           backgroundImage: `url(${pic})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
-          height: '200vh',
+          height: '180vh',
         }}
       />
 

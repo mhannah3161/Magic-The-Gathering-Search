@@ -8,7 +8,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#181E33",
             "gradient": "linear-gradient(#97A3D1, #767FA3)",
-            "backgroundImages": "url('../pics/forest_bg.png')"
+            "backgroundImages": "url('./src/pics/forest_bg.png')"
         },
         "font": "Tinos"
     },
@@ -21,7 +21,7 @@
             "colorText": "#000000",
             "button-color": "#FFFFFF",
             "gradient": "linear-gradient(#B00B00, #EB9F82)",
-            "backgroundImages": "url('../pics/mountain.png)"
+            "backgroundImages": "url('./src/pics/mountain.png')"
         },
         "font": "Tinos"
     },
@@ -34,7 +34,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#9974a3",
             "gradient": "linear-gradient(#5d1670, #a69f9d)",
-            "backgroundImages": "url('../pics/swamp.png)"
+            "backgroundImages": "url('./src/pics/swamp.png')"
         },
         "font": "Tinos"
     },
@@ -47,7 +47,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#1DAD95",
             "gradient": "linear-gradient(#0e67ab, #b3ceea)",
-            "backgroundImages": "url('../pics/island.png)"
+            "backgroundImages": "url('./src/pics/island.png')"
         },
         "font": "Ubuntu"
     },
@@ -60,7 +60,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#16D53C",
             "gradient": "linear-gradient(#00733e, #c4f2ca)",
-            "backgroundImages": "url('../pics/forest.png)"
+            "backgroundImages": "url('./src/pics/forest.png')"
         },
         "font": "Ubuntu"
     },
@@ -73,7 +73,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#F0C000",
             "gradient": "linear-gradient(#f9faf4, #f8e7b9)",
-            "backgroundImages": "url('../pics/plain.png)"
+            "backgroundImages": "url('./src/pics/plains.png')"
         },
         "font": "Ubuntu"
     }
