@@ -7,17 +7,26 @@ import Footer from "./src/components/Footer.jsx";
 import Login from "./src/pages/Login.jsx";
 import Signup from "./src/pages/Signup.jsx";
 import themes from "./src/utils/schema.json";
+import { useAuth } from "./src/components/AuthContext.jsx"
 
 const App = () => {
+  const { isLoggedIn } = useAuth();
   const [selectedTheme, setSelectedTheme] = useState(themes["devoid"]);
   const location = useLocation();
 
   return (
     <>
       <div
-            style={{ backgroundImage: selectedTheme.colors.backgroundImages, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100%'}}
+        style={{
+          backgroundImage: selectedTheme.colors.backgroundImages,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          height: "100%",
+        }}
       >
-        <Navbar selectedTheme={selectedTheme} />
+        {!isLoggedIn && (
+          <Navbar selectedTheme={selectedTheme} />
+        )}
         <Header
           selectedTheme={selectedTheme}
           setSelectedTheme={setSelectedTheme}
@@ -49,14 +58,15 @@ const App = () => {
                 <HomePage />
               </>
             }
-            
           />
           <Route
             path="/login"
             element={<Login />}
           />
         </Routes>
-            <Footer selectedTheme={selectedTheme} />                
+        {isLoggedIn && (
+          <Footer selectedTheme={selectedTheme} />
+        )}
       </div>
     </>
   );
