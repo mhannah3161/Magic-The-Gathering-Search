@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {
-        const response = await fetch('/api/check-login');
+        const response = await fetch('./server/utils/auth');
         const data = await response.json();
         setLoggedIn(data.isLoggedIn);
       } catch (error) {

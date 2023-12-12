@@ -1,6 +1,3 @@
-// CHECK THIS CODE BEFORE USING IT
-
-
 const { GraphQLError } = require('graphql');
 const jwt = require('jsonwebtoken');
 

@@ -23,7 +23,7 @@ const Login = (props) => {
 
     // Perform actual authentication check on the server side
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("./server/utils/auth", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
