@@ -15,7 +15,7 @@ const App = () => {
   return (
     <>
       <div
-            style={{ backgroundImage: selectedTheme.colors.backgroundImages, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '200vh'}}
+            style={{ backgroundImage: selectedTheme.colors.backgroundImages, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '100%'}}
       >
         <Navbar selectedTheme={selectedTheme} />
         <Header
