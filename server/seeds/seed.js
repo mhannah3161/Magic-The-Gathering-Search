@@ -1,5 +1,5 @@
 const db = require('../config/connection');
-const { CardInfo, UserInfo } = require('../models');
+const { CardInfo, User } = require('../models');
 const cleanDB = require('./cleanDB');
 
 const cardData = require('./cardData.json');
@@ -13,9 +13,9 @@ db.once('open', async () => {
   console.log('Cards seeded!');
 });
 db.once('open', async () => {
-  await cleanDB('UserInfo', 'UserInformation');
+  await cleanDB('User', 'UserInformation');
 
-  await UserInfo.insertMany(userData);
+  await User.insertMany(userData);
 
   console.log('Users seeded!');
   process.exit(0);
