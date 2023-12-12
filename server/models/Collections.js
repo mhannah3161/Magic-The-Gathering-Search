@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
 
 const collectionSchema = new mongoose.Schema({
-  // UserInfo_id: {
-  //   type: String,
-  //   required: true,
-  // },
-  card_id: {
-    type: String,
-    required: false,
-  },
+  collectionName: String,
+  collection_cards: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'CardInfo',
+  }],
 });
 
 const Collection = mongoose.model('Collection', collectionSchema);
