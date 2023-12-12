@@ -6,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import '../utils/style.css'
 import Search from './Search.jsx'
 
-
 export default function Navbar({ selectedTheme, isLoggedIn }) {
   return (
     <Box className={'topNav'} style={{ background: selectedTheme.colors.gradient }}>
