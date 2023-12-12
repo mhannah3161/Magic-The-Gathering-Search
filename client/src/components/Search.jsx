@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import Collapse from '@mui/material/Collapse';
+import comingSoon from '../pics/ComingSoon.png';
 
 export default function CheckboxesTags() {
   const [selectedColors, setSelectedColors] = React.useState([]);
@@ -14,7 +15,7 @@ export default function CheckboxesTags() {
   const [convertedManaCost, setConvertedManaCost] = React.useState('');
   const [colorOptions, setColorOptions] = React.useState([]);
   const [rarityOptions, setRarityOptions] = React.useState([]);
-  const [selectedCard, setSelectedCard] = React.useState(null);
+  const [selectedCardImages, setSelectedCardImages] = React.useState([]);
   const [searchMenuOpen, setSearchMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -53,15 +54,20 @@ export default function CheckboxesTags() {
       );
 
       const data = await response.json();
-      setSelectedCard(data.cards[0]); // Assuming you want to display the first card in the result
+      // Store only the image URLs of the matching cards, or use a placeholder if no image is available
+      const cardImages = data.cards.map((card) => card.imageUrl || comingSoon);
+      setSelectedCardImages(cardImages);
+
+      // Collapse the search menu after performing a search
+      setSearchMenuOpen(false);
     } catch (error) {
       console.error('Error fetching card data:', error);
     }
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ backgroundColor: '#add8e6', padding: '20px', borderRadius: '10px', width: searchMenuOpen ? '50%' : '100%' }}>
+    <div style={{ display: 'flex', width: '100%' }}>
+      <div style={{ backgroundColor: '#add8e6', padding: '20px', borderRadius: '10px', width: searchMenuOpen ? '30%' : '100%', height: searchMenuOpen ? "460px" : "55px" }}>
         <Button
           variant="contained"
           color="primary"
@@ -69,7 +75,7 @@ export default function CheckboxesTags() {
         >
           {searchMenuOpen ? 'Hide Search' : 'Show Search'}
         </Button>
-        <Collapse in={searchMenuOpen}>
+        <Collapse in={searchMenuOpen} timeout={0} unmountOnExit>
           <div>
             <TextField
               label="Search for Card Names"
@@ -85,7 +91,16 @@ export default function CheckboxesTags() {
               getOptionLabel={(color) => color}
               value={selectedColors}
               onChange={(event, newValue) => setSelectedColors(newValue)}
-              style={{ width: 500 }}
+              sx={{
+                width: {
+                  xs: 100,// 0
+                  sm: 200,// 600
+                  md: 250,// 900
+                  lg: 300,// 1200
+                  xl: 400,// 1536
+                },
+                }
+              }
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -100,7 +115,16 @@ export default function CheckboxesTags() {
               getOptionLabel={(rarity) => rarity}
               value={selectedRarity}
               onChange={(event, newValue) => setSelectedRarity(newValue)}
-              style={{ width: 200 }}
+              sx={{
+                width: {
+                  xs: 100,// 0
+                  sm: 200,// 600
+                  md: 250,// 900
+                  lg: 300,// 1200
+                  xl: 400,// 1536
+                },
+                }
+              }
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -143,21 +167,20 @@ export default function CheckboxesTags() {
           </div>
         </Collapse>
       </div>
-      {selectedCard && (
-        <div style={{ backgroundColor: '#f0f0f0', padding: '20px', borderRadius: '10px', width: '50%', marginTop: '20px' }}>
-          {/* Display the selected card information */}
-          <>
-            <div>Selected Card: {selectedCard.name}</div>
-            <div>Type: {selectedCard.type}</div>
-            <div>Subtype: {selectedCard.subtype}</div>
-            <div>Artist: {selectedCard.artist}</div>
-            <div>Converted Mana Cost: {selectedCard.cmc}</div>
-            <img
-              src={selectedCard.imageUrl}
-              alt={selectedCard.name}
-              style={{ maxWidth: '100%', marginTop: '10px' }}
-            />
-          </>
+      {selectedCardImages.length > 0 && (
+        <div style={{ backgroundColor: '#f0f0f0', margin: '10px', padding: '4px', borderRadius: '10px', marginTop: '20px' }}>
+          {/* Display card images in rows of three */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+            {selectedCardImages.map((imageUrl, index) => (
+              <div key={index} style={{ marginRight: '20px', marginBottom: '20px', flexBasis: 'calc(33.33% - 20px)' }}>
+                <img
+                  src={imageUrl}
+                  alt={`Card ${index + 1}`}
+                  style={{ maxWidth: '100%', height: '400px' }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
