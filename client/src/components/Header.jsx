@@ -1,11 +1,24 @@
 import React from 'react';
-import Dropdown from './Dropdown';
+import Box from '@mui/material/Box';
+import Search from './Search.jsx'
 
 
-const Header = ({ selectedTheme, setSelectedTheme }) => {
+const Header = () => {
   return (
       <header className='background-color'>
-      <Dropdown selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
+        <Box display="flex" flexDirection="row">
+          <Box
+            component="form"
+            sx={{
+              '& > :not(style)': { m: 0.5, width: '60ch' },
+            }}
+            noValidate
+            autoComplete="off"
+            justifyContent="center"
+          >
+            <Search />
+          </Box>
+        </Box>
       </header>
   );
 }

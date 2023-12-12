@@ -4,25 +4,14 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import '../utils/style.css'
-import Search from './Search.jsx'
+import Dropdown from './Dropdown';
 
-export default function Navbar({ selectedTheme, isLoggedIn }) {
+
+export default function Navbar({ selectedTheme, setSelectedTheme, isLoggedIn }) {
   return (
     <Box className={'topNav'} style={{ background: selectedTheme.colors.gradient }}>
       <Box display="flex" justifyContent="flex-end" className="navbar">
-        <Box display="flex" flexDirection="row">
-          <Box
-            component="form"
-            sx={{
-              '& > :not(style)': { m: 0.5, width: '60ch' },
-            }}
-            noValidate
-            autoComplete="off"
-            justifyContent="center"
-          >
-            <Search />
-          </Box>
-        </Box>
+      <Dropdown selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
         <Box display="flex" flexDirection="row" className="navbuts" md={{ flexDirection: 'column' }}>
           {isLoggedIn && (
             <>
