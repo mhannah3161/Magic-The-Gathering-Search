@@ -4,6 +4,8 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import '../utils/style.css'
+import Search from './Search.jsx'
+
 
 
 
@@ -32,14 +34,13 @@ export default function Navbar({ selectedTheme }) {
           autoComplete="off"
           justifyContent="center"
           >
-            <TextField label="Seek" focused />
+            <Search />
           </Box>
         </Box>
         <Box
         display="flex"
         flexDirection="row"
         className='navbuts'
-        md:flexDirection="column"
         >
           <Button variant="contained" style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/Login" >Login!</Link></Button>
           <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"], color:selectedTheme.colors.colorText}} className='buttonNav'>Logout</Button>
