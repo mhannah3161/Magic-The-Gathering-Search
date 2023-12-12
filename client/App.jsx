@@ -25,11 +25,13 @@ const App = () => {
         }}
       >
         {!isLoggedIn && (
-          <Navbar selectedTheme={selectedTheme} />
+          <Navbar 
+          selectedTheme={selectedTheme} 
+          setSelectedTheme={setSelectedTheme} 
+          />
         )}
         <Header
           selectedTheme={selectedTheme}
-          setSelectedTheme={setSelectedTheme}
           style={{ fontFamily: selectedTheme.font }}
         />
         <Routes>
