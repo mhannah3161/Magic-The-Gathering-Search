@@ -7,6 +7,7 @@ export const Signup = () => {
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [username, setUsername] = useState("");
     const onButtonClick = () => {
         setEmailError("");
         setPasswordError("");
@@ -33,7 +34,7 @@ export const Signup = () => {
             <div className="form-wrapper">
                 <div>
                     <input
-                        // value={username}
+                        value={username}
                         placeholder="Username"
                         onChange={e => setUsername(e.target.value)}
                         size="large"
