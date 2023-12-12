@@ -49,6 +49,11 @@ const App = () => {
                 <HomePage />
               </>
             }
+            
+          />
+          <Route
+            path="/login"
+            element={<Login />}
           />
         </Routes>
             <Footer selectedTheme={selectedTheme} />                

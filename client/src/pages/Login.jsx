@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -17,6 +17,8 @@ const Login = (props) => {
 
     if (password.length < 7) {
       setPasswordError("Password must be at least 7 characters");
+    } else {
+      window.location.href = "./";
     }
   };
 
