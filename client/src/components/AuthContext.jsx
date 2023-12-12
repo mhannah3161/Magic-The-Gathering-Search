@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkLoginStatus = async () => {
       try {
-        const response = await fetch('./server/utils/auth');
+        const response = await fetch('/server/utils/auth');
         const data = await response.json();
         setLoggedIn(data.isLoggedIn);
       } catch (error) {
@@ -42,5 +42,5 @@ export const AuthProvider = ({ children }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  return context || { isLoggedIn: false }; // Provide a default value
+  return context || { isLoggedIn: false }; 
 };

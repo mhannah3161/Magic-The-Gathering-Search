@@ -8,7 +8,10 @@ const Login = (props) => {
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
-  const onButtonClick = async () => {
+  const onButtonClick = async (e) => {
+
+    e.preventDefault();
+    
     setPasswordError("");
 
     if ("" === password) {
@@ -18,27 +21,46 @@ const Login = (props) => {
 
     if (password.length < 7) {
       setPasswordError("Password must be at least 7 characters");
-      return;
+      return;      
     }
 
-    // Perform actual authentication check on the server side
     try {
-      const response = await fetch("./server/utils/auth", {
+    const response = await fetch("/graphql", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({
+          query: `
+            mutation Login($username: String!, $password: String!) {
+              login(username: $username, password: $password) {
+                token
+              }
+            }
+          `,
+          variables: {
+            username,
+            password,
+          },
+        }),
       });
 
       if (response.ok) {
-        // Authentication successful
-        // You might want to handle the response or store user information in your context
-        navigate("/"); // Redirect to the home page or any other route
-      } else {
-        // Authentication failed
-        // You might want to handle different error cases
-        setPasswordError("Invalid credentials");
+        const { token } = await response.json();
+        // Token verification
+        const verificationResponse = await fetch("../../server/utils/auth", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+          },
+        });
+
+        if (verificationResponse.ok) {
+          navigate("/"); // Redirect to the home page
+        } else {
+          setPasswordError("Invalid credentials");
+        }
       }
     } catch (error) {
       console.error("Error during login:", error);
@@ -48,6 +70,7 @@ const Login = (props) => {
 
   return (
     <div>
+     <form onSubmit={onButtonClick}>
       <div className="form-wrapper loginPage">
         <div>
           <input
@@ -72,7 +95,8 @@ const Login = (props) => {
         <Button onClick={onButtonClick} type="primary" size="large">
           Login
         </Button>
-      </div>
+        </div>
+        </form>
       <br />
       <p>
         Don't have an account? <Link to="/Signup">Signup!</Link>
