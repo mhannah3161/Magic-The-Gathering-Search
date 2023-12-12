@@ -24,16 +24,31 @@ export default function Navbar({ selectedTheme, isLoggedIn }) {
             <Search />
           </Box>
         </Box>
-        <Box
-        display="flex"
-        flexDirection="row"
-        className='navbuts'
-        md:flexDirection="column"
-        >
-          <Button variant="contained" style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/Login" >Login!</Link></Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"], color:selectedTheme.colors.colorText}} className='buttonNav'>Logout</Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/collections" >Collections</Link></Button>
-          <Button variant='contained' style={{backgroundColor: selectedTheme.colors["button-color"]}} className='buttonNav'><Link className='linkStyle' style={{color:selectedTheme.colors.colorText}} to="/decks">Decks</Link></Button>
+        <Box display="flex" flexDirection="row" className="navbuts" md={{ flexDirection: 'column' }}>
+          {isLoggedIn && (
+            <>
+              <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+                Logout
+              </Button>
+              <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+                <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/collections">
+                  Collections
+                </Link>
+              </Button>
+              <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+                <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/decks">
+                  Decks
+                </Link>
+              </Button>
+            </>
+          )}
+          {!isLoggedIn && (
+            <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+              <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/login">
+                Login!
+              </Link>
+            </Button>
+          )}
         </Box>
       </Box>
     </Box>
