@@ -40,6 +40,7 @@
     "react-select": "^5.8.0",
     "router-dom": "^2.2.11",
     "styled-components": "^6.1.1",
+    "vite": "^5.0.7",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
