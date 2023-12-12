@@ -1,14 +1,11 @@
 const mongoose = require('mongoose');
 
 const deckSchema = new mongoose.Schema({
-  UserInfo_id: {
-    type: String,
-    required: true,
-  },
-  card_id: {
-    type: String,
-    required: false,
-  },
+  deckName: String,
+  deck_cards: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'CardInfo',
+  }],
 });
 
 const Deck = mongoose.model('Deck', deckSchema);

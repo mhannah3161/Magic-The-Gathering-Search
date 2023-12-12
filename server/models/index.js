@@ -1,6 +1,6 @@
-const UserInfo = require('./UserInfo');
+const User = require('./User');
 const CardInfo = require('./CardInfo');
 const Collection = require('./Collections');
-const Profile = require('./Profile');
+const Deck = require('./Decks');
 
-module.exports = { UserInfo, CardInfo, Collection, Profile };
+module.exports = { User, CardInfo, Collection, Deck };

@@ -8,17 +8,41 @@ const Login = (props) => {
   const [passwordError, setPasswordError] = useState("");
   const navigate = useNavigate();
 
-  const onButtonClick = () => {
+  const onButtonClick = async () => {
     setPasswordError("");
 
     if ("" === password) {
       setPasswordError("Password is required");
+      return;
     }
 
     if (password.length < 7) {
       setPasswordError("Password must be at least 7 characters");
-    } else {
-      window.location.href = "./";
+      return;
+    }
+
+    // Perform actual authentication check on the server side
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        // Authentication successful
+        // You might want to handle the response or store user information in your context
+        navigate("/"); // Redirect to the home page or any other route
+      } else {
+        // Authentication failed
+        // You might want to handle different error cases
+        setPasswordError("Invalid credentials");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      setPasswordError("Error during login");
     }
   };
 
