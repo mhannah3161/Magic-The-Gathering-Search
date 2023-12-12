@@ -1,9 +1,10 @@
 import React from 'react';
+
 import Box from '@mui/material/Box';
 import Search from './Search.jsx'
 
 
-const Header = () => {
+const Header = ({ selectedTheme, setSelectedTheme }) => {
   return (
       <header className='background-color'>
         <Box display="flex" flexDirection="row">
