@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import '../utils/style.css';
+import '../utils/style.css'
+import Search from './Search.jsx'
 
 export default function Navbar({ selectedTheme, isLoggedIn }) {
   return (
@@ -19,7 +20,7 @@ export default function Navbar({ selectedTheme, isLoggedIn }) {
             autoComplete="off"
             justifyContent="center"
           >
-            <TextField label="Seek" focused />
+            <Search />
           </Box>
         </Box>
         <Box display="flex" flexDirection="row" className="navbuts" md={{ flexDirection: 'column' }}>
