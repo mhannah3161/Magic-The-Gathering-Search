@@ -1,10 +1,9 @@
 import { Outlet, Route, Routes, Link, useLocation } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HomePage from "./src/pages/HomePage.jsx";
 import Header from "./src/components/Header.jsx";
 import Navbar from "./src/components/Navbar.jsx";
 import Footer from "./src/components/Footer.jsx";
-import BGimg from "./src/pics/forest_bg.png";
 import Login from "./src/pages/Login.jsx";
 import Signup from "./src/pages/Signup.jsx";
 import themes from "./src/utils/schema.json";
@@ -16,7 +15,7 @@ const App = () => {
   return (
     <>
       <div
-        style={{ backgroundImage: `url(${BGimg})`, backgroundSize: "cover" }}
+            style={{ backgroundImage: selectedTheme.colors.backgroundImages, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: '200vh'}}
       >
         <Navbar selectedTheme={selectedTheme} />
         <Header

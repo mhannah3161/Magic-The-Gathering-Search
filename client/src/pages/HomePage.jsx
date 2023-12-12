@@ -4,15 +4,20 @@ import pic from '../pics/paper.png'
 
 const HomePage = () => {
   return (
-    <div>
+    <div 
+    style={{
+      height: '200vh',
+      width: '100%',
+    }}
+    >
       <Box
         display="flex"
         justifyContent="center"
         style={{
           backgroundImage: `url(${pic})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
-          height: '200vh',
+          height: '180vh',
         }}
       />
 
