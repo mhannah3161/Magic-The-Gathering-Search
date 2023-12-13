@@ -16,7 +16,7 @@ const CollectionsPage = ({ data }) => {
               </div>
             ))
           ) : (
-            <p>MF collections page</p>
+        <p>MF collections page</p>
           )}
         </div>
       </div>

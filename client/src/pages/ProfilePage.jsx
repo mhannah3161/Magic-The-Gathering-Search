@@ -1,23 +1,20 @@
 import React from "react";
 
-export default function ProfilePage() {
+
+function ProfilePage() {
     
     return (
       <>
         <div>
-          <h1>Username
-          </h1>
+          <h1>Username</h1>
         </div>
         <span>
-            <div>
-              < Collections />
-            </div>
-            <div>
-              < Decks />
-            </div>
+
             {/* Maybe include a friends list? */}
-            <div>Friends</div>
+            <p>MF profile page</p>
         </span>
       </>
     );
-  }
+}
+  
+export default ProfilePage;
