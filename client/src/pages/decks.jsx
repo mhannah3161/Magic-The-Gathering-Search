@@ -6,16 +6,18 @@ const DeckPage = ({ data }) => {
       <h1>Username's Deck Name</h1>
       <div className="mainbox">
         <div>
-          {data.map((item, index) => {
-            return (
+          {Array.isArray(data) && data.length > 0 ? (
+            data.map((item, index) => (
               <div key={index} className="card">
                 <img src={item.image} alt={item.name} />
                 <p>{item.name}</p>
                 <p>{item.description}</p>
                 <p>{item.price}</p>
               </div>
-            );
-          })}
+            ))
+          ) : (
+            <p>MF deck page</p>
+          )}
         </div>
       </div>
     </div>
