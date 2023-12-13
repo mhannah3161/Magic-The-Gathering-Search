@@ -17,7 +17,9 @@ const Header = ({ selectedTheme, setSelectedTheme }) => {
             autoComplete="off"
             justifyContent="center"
           >
-            <Search />
+            <Search 
+            selectedTheme={selectedTheme}  
+            />
           </Box>
         </Box>
       </header>
