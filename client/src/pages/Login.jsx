@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
@@ -72,36 +74,34 @@ const Login = (props) => {
   return (
     <div>
      <form onSubmit={onButtonClick}>
-      <div className="form-wrapper loginPage">
+      <Box display="flex" justifyContent="center">
+
+      <Box display="flex" flexDirection="column"  className="form-wrapper loginPage">
+        <div style={{backgroundColor: "#FFFFFF"}}>
         <div>
-          <input
-            value={username}
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-            size="large"
-          />
+        <TextField label="Username" variant="filled" color="success" focused onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div>
-          <input
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            size="large"
-            type="password"
-          />
+        <TextField label="Password" variant="filled" color="success" focused onChange={(e) => setPassword(e.target.value)} />
           <label>{passwordError}</label>
         </div>
-      </div>
+        </div>
+      </Box>
       <div className="button-wrapper">
-        <Button onClick={onButtonClick} type="primary" size="large">
+        <Button onClick={onButtonClick} type="primary" size="large" style={{ backgroundColor: "blue", color:"white", borderRadius: "10px", marginLeft: "10px", marginTop: "40px"}}>
           Login
         </Button>
         </div>
+            </Box>
         </form>
       <br />
-      <p>
-        Don't have an account? <Link to="/Signup">Signup!</Link>
+      <Box display="flex" flexDirection="row" justifyContent="center">
+
+      <p style={{ backgroundColor: "blue", color:"white", width: "200px", borderRadius: "20px", padding:"10px"}}>
+        Don't have an account? 
       </p>
+      <Link to="/Signup" style={{ backgroundColor: "white", color: "green", marginLeft:"10px", borderRadius: "5px", padding: "3px", textDecoration: "none"}}>Signup!</Link>
+      </Box>
 
       <p>
         <Link to="/">Back to Home</Link>
