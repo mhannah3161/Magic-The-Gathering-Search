@@ -9,7 +9,7 @@ import Signup from "./src/pages/Signup.jsx";
 import DeckPage from "./src/pages/decks.jsx"
 import themes from "./src/utils/schema.json";
 import { useAuth } from "./src/components/AuthContext.jsx"
-import CollectionsPage from './src/pages/collections.jsx';
+import CollectionsPage from './src/pages/Collections.jsx';
 import ProfilePage from "./src/pages/ProfilePage.jsx";
 
 
@@ -49,7 +49,7 @@ const App = () => {
             }
           />
           <Route
-            path="/signup"
+            path="/Signup"
             element={
               <>
                 <Signup />
@@ -58,18 +58,18 @@ const App = () => {
             }
           />
           <Route
-            path="/decks"
+            path="/Decks"
             element={
               <>
-                <DeckPage />
+                <DeckPage  selectedTheme={selectedTheme}  />
               </>
             }
           />
           <Route
-            path="/collections"
+            path="/Collections"
             element={
               <>
-                <CollectionsPage />
+                <CollectionsPage  selectedTheme={selectedTheme} />
               </>
             }
           />
@@ -85,7 +85,7 @@ const App = () => {
             path="/ProfilePage"
             element={
               <>
-                <ProfilePage />
+                <ProfilePage  selectedTheme={selectedTheme} />
               </>
             }
           />
