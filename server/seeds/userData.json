@@ -1,27 +1,27 @@
 [
     {
         "username": "Jimmy",
-        "email": "jimmy@jimmy.com",
+        "email": "jimmy@run.com",
         "password": "Timmy123"
     },
     {
         "username": "Stanley",
-        "email": "stan@stan.com",
+        "email": "stan@run.com",
         "password": "Kyle123"
     },
     {
         "username": "Kenny",
-        "email": "Kenny@kenny.com",
+        "email": "Kenny@run.com",
         "password": "Kenny123"
     },
     {
         "username": "Cartman",
-        "email": "cartman@cartman.com",
+        "email": "cartman@run.com",
         "password": "Cartman123"
     },
     {
         "username": "Butters",
-        "email": "butters@butters.com",
+        "email": "butters@run.com",
         "password": "Butters123"
     }
 ]
