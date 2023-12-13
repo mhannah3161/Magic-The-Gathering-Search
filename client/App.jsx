@@ -8,6 +8,8 @@ import Login from "./src/pages/Login.jsx";
 import Signup from "./src/pages/Signup.jsx";
 import themes from "./src/utils/schema.json";
 import { useAuth } from "./src/components/AuthContext.jsx"
+import CollectionsPage from './src/pages/collections.jsx';
+
 
 const App = () => {
   const { isLoggedIn } = useAuth();
@@ -55,18 +57,18 @@ const App = () => {
             }
           />
           <Route
-            path="/"
+            path="/collections"
             element={
               <>
-                <HomePage />
+                <CollectionsPage />
               </>
             }
           />
           <Route
-            path="/decks"
+            path="/"
             element={
               <>
-                <Decks />
+                <HomePage />
               </>
             }
           />
