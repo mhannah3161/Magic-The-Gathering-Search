@@ -49,7 +49,7 @@ const App = () => {
             }
           />
           <Route
-            path="/signup"
+            path="/Signup"
             element={
               <>
                 <Signup />
@@ -58,7 +58,7 @@ const App = () => {
             }
           />
           <Route
-            path="/decks"
+            path="/Decks"
             element={
               <>
                 <DeckPage />
@@ -66,7 +66,7 @@ const App = () => {
             }
           />
           <Route
-            path="/collections"
+            path="/Collections"
             element={
               <>
                 <CollectionsPage />
