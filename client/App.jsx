@@ -15,7 +15,6 @@ const App = () => {
   const { isLoggedIn } = useAuth();
   const [selectedTheme, setSelectedTheme] = useState(themes["devoid"]);
   const location = useLocation();
-
   return (
     <>
       <div
@@ -78,5 +77,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;
