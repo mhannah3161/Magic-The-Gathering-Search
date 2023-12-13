@@ -4,7 +4,7 @@ import DeckPage from "./decks.jsx";
 import CollectionsPage from "./Collections.jsx";
 
 
-function ProfilePage() {
+function ProfilePage( selectedTheme ) {
 
   return (
     <>

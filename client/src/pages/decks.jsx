@@ -1,8 +1,13 @@
 import React from "react";
+import Box from '@mui/material/Box';
+import { BorderAllRounded, BorderStyle } from "@mui/icons-material";
 
-const DeckPage = ({ data }) => {
+
+const DeckPage = ({ data, selectedTheme }) => {
   return (
-    <div>
+    <Box width="90%" height="500px" marginLeft="50px">
+      <div style={{backgroundColor: selectedTheme.colors["background-color"], height:"100%", border:"Solid", borderColor: selectedTheme.colors["button-color"]}}>
+
       <h1>Username's Deck Name</h1>
       <div className="mainbox">
         <div>
@@ -15,12 +20,13 @@ const DeckPage = ({ data }) => {
                 <p>{item.price}</p>
               </div>
             ))
-          ) : (
-            <p>MF deck page</p>
-          )}
+            ) : (
+              <p>MF deck page</p>
+              )}
         </div>
       </div>
-    </div>
+              </div>
+    </Box>
   );
 };
 

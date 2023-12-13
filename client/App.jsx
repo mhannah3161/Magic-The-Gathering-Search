@@ -61,7 +61,7 @@ const App = () => {
             path="/Decks"
             element={
               <>
-                <DeckPage />
+                <DeckPage  selectedTheme={selectedTheme}  />
               </>
             }
           />
@@ -69,7 +69,7 @@ const App = () => {
             path="/Collections"
             element={
               <>
-                <CollectionsPage />
+                <CollectionsPage  selectedTheme={selectedTheme} />
               </>
             }
           />
@@ -85,7 +85,7 @@ const App = () => {
             path="/ProfilePage"
             element={
               <>
-                <ProfilePage />
+                <ProfilePage  selectedTheme={selectedTheme} />
               </>
             }
           />
