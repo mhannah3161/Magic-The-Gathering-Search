@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './src/pics/Main_bg.png';
 
 import App from './App.jsx';
 import Error from './src/pages/Error.jsx';
