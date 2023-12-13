@@ -9,7 +9,7 @@ import ProfilePage from './src/pages/ProfilePage.jsx';
 import Login from './src/pages/Login.jsx';
 import Signup from './src/pages/Signup.jsx';
 import Collections from './src/pages/collections.jsx';
-import Decks from './src/pages/Decks.jsx';
+import DeckPage from './src/pages/decks.jsx';
 
 const router = createBrowserRouter([
     {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/decks',
-                element: <Decks />
+                element: <DeckPage />
             }
         ]
 }]);
