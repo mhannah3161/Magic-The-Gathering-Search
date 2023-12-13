@@ -82,7 +82,7 @@ const Login = (props) => {
         <TextField label="Username" variant="filled" color="success" focused onChange={(e) => setUsername(e.target.value)} />
         </div>
         <div>
-        <TextField label="Password" variant="filled" color="success" focused onChange={(e) => setPassword(e.target.value)} />
+        <TextField label="Password" variant="filled" color="success" type="password" focused onChange={(e) => setPassword(e.target.value)} />
           <label>{passwordError}</label>
         </div>
         </div>
