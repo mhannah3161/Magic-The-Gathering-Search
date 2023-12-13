@@ -1,6 +1,6 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import DeckPage from "./Decks.jsx";
+import DeckPage from "./decks.jsx";
 import CollectionsPage from "./Collections.jsx";
 
 
