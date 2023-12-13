@@ -62,6 +62,14 @@ const App = () => {
               </>
             }
           />
+          <Route
+            path="/decks"
+            element={
+              <>
+                <Decks />
+              </>
+            }
+          />
         </Routes>
           <Footer selectedTheme={selectedTheme} />
       </div>

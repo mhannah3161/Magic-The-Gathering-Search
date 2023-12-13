@@ -14,6 +14,7 @@ const CollectionsPage = ({ data }) => {
                         <div key={index} className="card">
                             <img src={item.image} alt={item.name} />
                             <p>{item.name}</p>
+                            <p>MF collections page</p>
                             <p>{item.description}</p>
                             <p>{item.price}</p>
                         </div>
