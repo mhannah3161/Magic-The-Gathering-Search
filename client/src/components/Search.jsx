@@ -3,9 +3,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Button from '@mui/material/Button';
 import Collapse from '@mui/material/Collapse';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import comingSoon from '../pics/ComingSoon.png';
 
-export default function CheckboxesTags() {
+export default function CheckboxesTags({ selectedTheme }) {
   const [selectedColors, setSelectedColors] = React.useState([]);
   const [selectedRarity, setSelectedRarity] = React.useState(null);
   const [searchInput, setSearchInput] = React.useState('');
@@ -17,6 +19,7 @@ export default function CheckboxesTags() {
   const [rarityOptions, setRarityOptions] = React.useState([]);
   const [selectedCardImages, setSelectedCardImages] = React.useState([]);
   const [searchMenuOpen, setSearchMenuOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
   React.useEffect(() => {
     // Fetch colors and rarities when the component mounts
@@ -39,6 +42,40 @@ export default function CheckboxesTags() {
   const handleSearchButtonClick = () => {
     setSearchMenuOpen(!searchMenuOpen);
   };
+
+  const handleMenuClick = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleAddToCollection = (cardId) => {
+    // Add logic to handle adding the card to the collection/database
+    console.log(`Adding card with ID ${cardId} to collection`);
+    handleMenuClose();
+  };
+
+  const handleMenuItemClick = (option) => {
+    console.log(`Selected option: ${option}`);
+    // Add logic to handle the selected menu item (e.g., Add to Deck or Add to Collection)
+    handleMenuClose();
+  };
+
+  const isMenuOpen = Boolean(anchorEl);
+
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={() => handleMenuItemClick('Add to Deck')}>Add to Deck</MenuItem>
+      <MenuItem onClick={() => handleMenuItemClick('Add to Collection')}>Add to Collection</MenuItem>
+    </Menu>
+  );
 
   const fetchCardData = async () => {
     try {
@@ -93,14 +130,13 @@ export default function CheckboxesTags() {
               onChange={(event, newValue) => setSelectedColors(newValue)}
               sx={{
                 width: {
-                  xs: 100,// 0
-                  sm: 200,// 600
-                  md: 250,// 900
-                  lg: 300,// 1200
-                  xl: 400,// 1536
+                  xs: 100,
+                  sm: 200,
+                  md: 250,
+                  lg: 300,
+                  xl: 400,
                 },
-                }
-              }
+              }}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -117,14 +153,13 @@ export default function CheckboxesTags() {
               onChange={(event, newValue) => setSelectedRarity(newValue)}
               sx={{
                 width: {
-                  xs: 100,// 0
-                  sm: 200,// 600
-                  md: 250,// 900
-                  lg: 300,// 1200
-                  xl: 400,// 1536
+                  xs: 100,
+                  sm: 200,
+                  md: 250,
+                  lg: 300,
+                  xl: 400,
                 },
-                }
-              }
+              }}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -172,12 +207,42 @@ export default function CheckboxesTags() {
           {/* Display card images in rows of three */}
           <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
             {selectedCardImages.map((imageUrl, index) => (
-              <div key={index} style={{ marginRight: '20px', marginBottom: '20px', flexBasis: 'calc(33.33% - 20px)' }}>
+              <div key={index} style={{ position: 'relative', marginRight: '20px', marginBottom: '20px', flexBasis: 'calc(33.33% - 20px)' }}>
                 <img
                   src={imageUrl}
                   alt={`Card ${index + 1}`}
                   style={{ maxWidth: '100%', height: '400px' }}
                 />
+                <button
+                  onClick={handleMenuClick}
+                  style={{
+                    position: 'absolute',
+                    top: '10px',
+                    right: '10px',
+                    backgroundColor: selectedTheme.colors.addButton,// Change the button color to lime green
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '5px',
+                    borderRadius: '50%',
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="30px"
+                    width="30px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                  </svg>
+                </button>
+                {renderMenu}
               </div>
             ))}
           </div>
