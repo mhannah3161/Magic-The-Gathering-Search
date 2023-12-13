@@ -6,7 +6,7 @@ import Navbar from "./src/components/Navbar.jsx";
 import Footer from "./src/components/Footer.jsx";
 import Login from "./src/pages/Login.jsx";
 import Signup from "./src/pages/Signup.jsx";
-import DeckPage from "./src/pages/Decks.jsx"
+import DeckPage from "./src/pages/decks.jsx"
 import themes from "./src/utils/schema.json";
 import { useAuth } from "./src/components/AuthContext.jsx"
 import CollectionsPage from './src/pages/Collections.jsx';
