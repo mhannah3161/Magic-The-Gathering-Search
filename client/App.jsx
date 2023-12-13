@@ -28,6 +28,7 @@ const App = () => {
           <Navbar 
           selectedTheme={selectedTheme} 
           setSelectedTheme={setSelectedTheme} 
+          isLoggedIn={isLoggedIn}
           />
         )}
         <Header

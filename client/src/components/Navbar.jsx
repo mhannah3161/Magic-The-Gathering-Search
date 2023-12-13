@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
 import '../utils/style.css'
 import Dropdown from './Dropdown';
 
@@ -26,6 +25,11 @@ export default function Navbar({ selectedTheme, setSelectedTheme, isLoggedIn }) 
               <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
                 <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/decks">
                   Decks
+                </Link>
+              </Button>
+              <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+                <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/ProfilePage">
+                  Profile
                 </Link>
               </Button>
             </>
