@@ -20,7 +20,7 @@ There have been many backend updates to this application and many frontend updat
 
 ## Link to deployed page
 
-https://mtg-search-engine-9599f588e5fc.herokuapp.com/
+https://the-lorekeepers-library.onrender.com/
 
 ## Link to this repostory <br>(Knockoff Gatherer 3.0)
 https://github.com/mhannah3161/Magic-The-Gathering-Search
@@ -48,18 +48,8 @@ https://www.muicss.com/
 
 
 ## Dependencies used
-    "bcrypt": "^5.1.1",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "express-flash": "^0.0.2",
-    "express-handlebars": "^7.1.2",
-    "express-session": "^1.17.3",
-    "handlebars": "^4.7.8",
-    "i": "^0.3.7",
-    "mysql2": "^3.6.1",
-    "npm": "^10.2.0",
-    "sequelize": "^6.33.0"
 
+![Alt text](<Screenshot 2023-12-12 at 21.58.05.png>)
 <hr>
 <center> Created by Michael Hannah, Jacob Campa and Anthony Ciccone
 .
