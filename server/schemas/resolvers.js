@@ -1,4 +1,7 @@
-const { User, CardInfo, Collection, Deck } = require('../models');
+const { Collection, Deck, User, CardInfo } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
+
 
 const resolvers = {
   Query: {
