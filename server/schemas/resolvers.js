@@ -1,4 +1,6 @@
 const { Collection, Deck, User, CardInfo } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -79,7 +81,23 @@ const resolvers = {
         throw new Error(`Error adding card to deck: ${error.message}`);
       }
     },
-    // Similar logic can be applied for creating a deck and adding cards to a deck
+    login: async (parent, { username, password }) => {
+      try {
+        // Find the user by username
+        const user = await User.findOne({ username });
+
+        // If the user is not found or the password is incorrect, throw AuthenticationError
+        if (!user || user.password !== password) {
+          throw AuthenticationError;
+        }
+
+        // Generate and return a JWT token
+        const token = signToken(user);
+        return { token };
+      } catch (error) {
+        throw new Error(`Error during login: ${error.message}`);
+      }
+    },
   },
 };
 
