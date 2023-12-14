@@ -54,7 +54,6 @@ mutation createDeck($deckName: String!) {
   export const ADD_USER = gql`
   mutation createUser($username: String!, $password: String!, $email: String!) {
     createUser(username: $username, password: $password, email: $email) {
-      _id
       username
       password
       email

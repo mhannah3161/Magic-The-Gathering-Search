@@ -1,3 +1,4 @@
+const { User, CardInfo, Collection, Deck } = require('../models');
 
 const resolvers = {
   Query: {
@@ -60,9 +61,9 @@ const resolvers = {
     Mutation: {
       createUser: async (parent, { username, password, email }) => {
         try {
-          const user = new User({ username, password, email });
-          await user.save();
-          return user;
+          const newUser = new User({ username, password, email });
+          await newUser.save();
+          return newUser;
         } catch (error) {
           throw new Error(`Error creating user: ${error.message}`);
         }
