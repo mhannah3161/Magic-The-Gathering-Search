@@ -31,7 +31,7 @@ export const Signup = () => {
             setPasswordError("Password must be at least 7 characters");
         }
         try {
-            const response = await newUser({ variables: { username, email, password } })
+            const response = await newUser({ variables: { username, email, password } });
         } catch (error) {
             throw error.message;
         }
