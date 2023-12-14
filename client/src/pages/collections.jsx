@@ -6,8 +6,11 @@ import Auth from '../utils/auth';
 
 const CollectionsPage = () => {
   const username = Auth.getUsername();
+  console.log(username);
   const { data } = useQuery(QUERY_COLLECTION, { variables: { username: username } });
-  const collections = data?.getCollection?.collections || [];
+  console.log('data', data);
+  const collections = data?.getCollection || [];
+  console.log(collections);
 
   useEffect(() => {
     document.title = 'Collections';
