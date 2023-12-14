@@ -1,4 +1,3 @@
-// authContext.jsx
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -30,7 +29,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   if (isLoggedIn === null) {
-    return null;
+    return null; // or a loading indicator
   }
 
   return (
@@ -42,5 +41,5 @@ export const AuthProvider = ({ children }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  return context || { isLoggedIn: false }; 
+  return context || { isLoggedIn: false, login: () => {}, logout: () => {} }; 
 };

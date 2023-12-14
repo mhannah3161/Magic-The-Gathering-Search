@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from "../utils/auth";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Auth from "../utils/auth";
@@ -43,53 +46,59 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
-            {data ? (
-              <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="username"
-                  type="username"
-                  value={formState.username}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            )}
-
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+    <>
+      <div>
+        {data ? (
+          <p>
+            Success! You may now head{" "}
+            <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <form onSubmit={handleFormSubmit}>
+          <div className="form-wrapper loginPage">
+            <div>
+              <input
+                className="form-input"
+                name="username"
+                type="username"
+                value={formState.username}
+                placeholder="Username"
+                onChange={handleChange}
+                size="large" />
+            </div>
+            <div>
+              <input
+                className="form-input"
+                name="password"
+                type="password" 
+                value={formState.password}
+                placeholder="Password"
+                onChange={handleChange}
+                size="large" />
+            </div>
           </div>
-        </div>
+          <div className="button-wrapper">
+            <Button type="primary" size="large">
+              Login
+            </Button>
+          </div>
+        </form>
+        )}
+        
       </div>
-    </main>
+      <br />
+      <Box display="flex" flexDirection="row" justifyContent="center">
+
+      <p style={{ backgroundColor: "blue", color:"white", width: "200px", borderRadius: "20px", padding:"10px"}}>
+        Don't have an account? 
+      </p>
+      <Link to="/Signup" style={{ backgroundColor: "white", color: "green", marginLeft:"10px", borderRadius: "5px", padding: "3px", textDecoration: "none"}}>Signup!</Link>
+      </Box>
+
+      <p>
+        <Link to="/">Back to Home</Link>
+      </p>
+    </>
   );
 };
 
