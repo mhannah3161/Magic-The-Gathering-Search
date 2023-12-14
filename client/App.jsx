@@ -1,3 +1,5 @@
+import ProfilePage from "./src/pages/ProfilePage.jsx";
+import CollectionsPage from "./src/pages/collections.jsx";
 import { Outlet, Route, Routes, Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import HomePage from "./src/pages/HomePage.jsx";
@@ -39,8 +41,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-import CollectionsPage from './src/pages/Collections.jsx';
-import ProfilePage from "./src/pages/ProfilePage.jsx";
 
 
 const App = () => {
