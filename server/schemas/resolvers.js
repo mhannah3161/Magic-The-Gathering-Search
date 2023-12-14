@@ -157,7 +157,15 @@ const resolvers = {
           if (!user) {
             throw new AuthenticationError('No user found with this username');
           }
-  
+          if (!password) {
+            throw new AuthenticationError('You need to enter a password');
+          }
+          if (password === user.password) {
+            // Password is correct
+            // Generate and return a JWT token
+            const token = signToken(user);
+            return { token };
+          }
           // Check bcrypt-hashed password
           if (bcrypt.compareSync(password, user.password)) {
             // Password is correct
