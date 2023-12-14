@@ -9,7 +9,7 @@ import Auth from "../utils/auth";
 const DeckPage = ({ selectedTheme }) => {
   const username = Auth.getUsername();
   const { data } = useQuery(QUERY_DECK, { variables: { username: username } });
-  const decks = data?.getDeck?.decks || [];
+  const decks = data?.getDeck || [];
 
   return (
     <Box width="90%" height="500px" marginLeft="50px">
