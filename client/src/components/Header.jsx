@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Search from './Search.jsx'
 
 
-const Header = ({ selectedTheme, setSelectedTheme }) => {
+const Header = ({ selectedTheme, setSelectedTheme, isLoggedin }) => {
   return (
       <header className='background-color'>
         <Box display="flex" flexDirection="row">
@@ -19,6 +19,7 @@ const Header = ({ selectedTheme, setSelectedTheme }) => {
           >
             <Search 
             selectedTheme={selectedTheme}  
+            isLoggedin={isLoggedin}
             />
           </Box>
         </Box>

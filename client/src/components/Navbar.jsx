@@ -9,7 +9,6 @@ import Auth from '../utils/auth';
 export default function Navbar({ selectedTheme, setSelectedTheme }) {
   const isLoggedIn = Auth.loggedIn();
 
-
   return (
     <Box className={'topNav'} style={{ background: selectedTheme.colors.gradient }}>
       <Box display="flex" justifyContent="flex-end" className="navbar">

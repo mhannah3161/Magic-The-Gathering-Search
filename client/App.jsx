@@ -6,6 +6,7 @@ import Navbar from "./src/components/Navbar.jsx";
 import Footer from "./src/components/Footer.jsx";
 import Login from "./src/pages/Login.jsx";
 import Signup from "./src/pages/Signup.jsx";
+import DeckPage from "./src/pages/decks.jsx"
 import themes from "./src/utils/schema.json";
 import { useAuth } from "./src/components/AuthContext.jsx"
 import {
@@ -38,6 +39,9 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+import CollectionsPage from './src/pages/Collections.jsx';
+import ProfilePage from "./src/pages/ProfilePage.jsx";
+
 
 const App = () => {
   const { isLoggedIn } = useAuth();
@@ -60,6 +64,7 @@ const App = () => {
           <Navbar 
           selectedTheme={selectedTheme} 
           setSelectedTheme={setSelectedTheme} 
+          isLoggedIn={isLoggedIn}
           />
         )}
         <Header
@@ -77,11 +82,27 @@ const App = () => {
             }
           />
           <Route
-            path="/signup"
+            path="/Signup"
             element={
               <>
                 <Signup />
                 <Outlet />
+              </>
+            }
+          />
+          <Route
+            path="/Decks"
+            element={
+              <>
+                <DeckPage  selectedTheme={selectedTheme}  />
+              </>
+            }
+          />
+          <Route
+            path="/Collections"
+            element={
+              <>
+                <CollectionsPage  selectedTheme={selectedTheme} />
               </>
             }
           />
@@ -93,6 +114,14 @@ const App = () => {
               </>
             }
           />
+           <Route
+            path="/ProfilePage"
+            element={
+              <>
+                <ProfilePage  selectedTheme={selectedTheme} />
+              </>
+            }
+          />
         </Routes>
           <Footer selectedTheme={selectedTheme} />
       </div>
@@ -100,5 +129,4 @@ const App = () => {
     </>
   );
 };
-
 export default App;

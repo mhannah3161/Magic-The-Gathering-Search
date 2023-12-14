@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: '', password: '' });
@@ -82,9 +84,14 @@ const Login = (props) => {
         
       </div>
       <br />
-      <p>
-        Don't have an account? <Link to="/Signup">Signup!</Link>
+      <Box display="flex" flexDirection="row" justifyContent="center">
+
+      <p style={{ backgroundColor: "blue", color:"white", width: "200px", borderRadius: "20px", padding:"10px"}}>
+        Don't have an account? 
       </p>
+      <Link to="/Signup" style={{ backgroundColor: "white", color: "green", marginLeft:"10px", borderRadius: "5px", padding: "3px", textDecoration: "none"}}>Signup!</Link>
+      </Box>
+
       <p>
         <Link to="/">Back to Home</Link>
       </p>

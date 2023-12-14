@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './src/pics/Main_bg.png';
 
 import App from './App.jsx';
 import Error from './src/pages/Error.jsx';
@@ -9,8 +8,8 @@ import Homepage from './src/pages/HomePage.jsx';
 import ProfilePage from './src/pages/ProfilePage.jsx';
 import Login from './src/pages/Login.jsx';
 import Signup from './src/pages/Signup.jsx';
-import Collections from './src/pages/Collections.jsx';
-import Decks from './src/pages/Decks.jsx';
+import Collections from './src/pages/collections.jsx';
+import DeckPage from './src/pages/decks.jsx';
 
 const router = createBrowserRouter([
     {
@@ -40,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/decks',
-                element: <Decks />
+                element: <DeckPage />
             }
         ]
 }]);

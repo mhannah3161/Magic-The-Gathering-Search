@@ -7,7 +7,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import comingSoon from '../pics/ComingSoon.png';
 
-export default function CheckboxesTags({ selectedTheme }) {
+export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
   const [selectedColors, setSelectedColors] = React.useState([]);
   const [selectedRarity, setSelectedRarity] = React.useState(null);
   const [searchInput, setSearchInput] = React.useState('');
@@ -213,6 +213,7 @@ export default function CheckboxesTags({ selectedTheme }) {
                   alt={`Card ${index + 1}`}
                   style={{ maxWidth: '100%', height: '400px' }}
                 />
+                {isLoggedIn && (
                 <button
                   onClick={handleMenuClick}
                   style={{
@@ -242,6 +243,7 @@ export default function CheckboxesTags({ selectedTheme }) {
                     <line x1="8" y1="12" x2="16" y2="12" />
                   </svg>
                 </button>
+                )}
                 {renderMenu}
               </div>
             ))}

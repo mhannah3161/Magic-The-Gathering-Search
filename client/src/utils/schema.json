@@ -8,7 +8,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#181E33",
             "gradient": "linear-gradient(#97A3D1, #767FA3)",
-            "backgroundImages": "url('./src/pics/forest_bg.png')",
+            "backgroundImages": "url('../forest_bg.png')",
         "addButton": "#97A3D1"
         },
         "font": "Tinos"
@@ -22,7 +22,7 @@
             "colorText": "#000000",
             "button-color": "#FFFFFF",
             "gradient": "linear-gradient(#B00B00, #EB9F82)",
-            "backgroundImages": "url('./src/pics/mountain.png')",
+            "backgroundImages": "url('../mountain.png')",
         "addButton": "#B00B00"
         },
         "font": "Tinos"
@@ -36,7 +36,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#9974a3",
             "gradient": "linear-gradient(#5d1670, #a69f9d)",
-            "backgroundImages": "url('./src/pics/swamp.png')",
+            "backgroundImages": "url('../swamp.png')",
         "addButton": "#9974a3"
         },
         "font": "Tinos"
@@ -50,7 +50,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#1DAD95",
             "gradient": "linear-gradient(#0e67ab, #b3ceea)",
-            "backgroundImages": "url('./src/pics/island.png')",
+            "backgroundImages": "url('../island.png')",
         "addButton": "#1DAD95"
         },
         "font": "Ubuntu"
@@ -64,7 +64,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#16D53C",
             "gradient": "linear-gradient(#00733e, #c4f2ca)",
-            "backgroundImages": "url('./src/pics/forest.png')",
+            "backgroundImages": "url('../forest.png')",
         "addButton": "#C4F2CA"
         },
         "font": "Ubuntu"
@@ -78,7 +78,7 @@
             "colorText": "#FFFFFF",
             "button-color": "#F0C000",
             "gradient": "linear-gradient(#f9faf4, #f8e7b9)",
-            "backgroundImages": "url('./src/pics/plains.png')",
+            "backgroundImages": "url('../plains.png')",
         "addButton": "#F0C000"
         },
         "font": "Ubuntu"
