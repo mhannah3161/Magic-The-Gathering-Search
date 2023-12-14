@@ -50,6 +50,11 @@ const typeDefs = `
     getDeck(username: String!): [Deck]
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Mutation {
     createCollection(username: String! collectionName: String!): Collection
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo

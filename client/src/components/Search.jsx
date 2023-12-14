@@ -21,6 +21,8 @@ export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
   const [searchMenuOpen, setSearchMenuOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const [deck, setDeck] = React.useState([]);
+
   React.useEffect(() => {
     // Fetch colors and rarities when the component mounts
     fetchColors();
@@ -58,11 +60,16 @@ export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
     handleMenuClose();
   };
 
-  const handleMenuItemClick = (option) => {
-    console.log(`Selected option: ${option}`);
-    // Add logic to handle the selected menu item (e.g., Add to Deck or Add to Collection)
-    handleMenuClose();
-  };
+ const handleMenuItemClick = (option) => {
+  if (option === 'Add to Deck') {
+    // Add the selected card to the deck
+    const selectedCard = 
+    setDeck((prevDeck) => [...prevDeck, selectedCard]);
+  }
+
+  // Close the menu
+  handleMenuClose();
+};
 
   const isMenuOpen = Boolean(anchorEl);
 

@@ -1,5 +1,3 @@
-import ProfilePage from "./src/pages/ProfilePage.jsx";
-import CollectionsPage from "./src/pages/collections.jsx";
 import { Outlet, Route, Routes, Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import HomePage from "./src/pages/HomePage.jsx";
@@ -41,12 +39,15 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+import CollectionsPage from './src/pages/Collections.jsx';
+import ProfilePage from "./src/pages/ProfilePage.jsx";
 
 
 const App = () => {
   const { isLoggedIn } = useAuth();
   const [selectedTheme, setSelectedTheme] = useState(themes["devoid"]);
   const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
 
 
   return (
@@ -67,10 +68,12 @@ const App = () => {
           isLoggedIn={isLoggedIn}
           />
         )}
-        <Header
-          selectedTheme={selectedTheme}
-          style={{ fontFamily: selectedTheme.font }}
-        />
+        {!isLoginPage && (
+            <Header
+              selectedTheme={selectedTheme}
+              style={{ fontFamily: selectedTheme.font }}
+            />
+          )}
         <Routes>
           <Route
             path="/login"
