@@ -48,11 +48,18 @@ const typeDefs = `
     getUserById(_id: ID!): User
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Mutation {
     createCollection(_id: ID!, collectionName: String!): Collection
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo
     createDeck(_id: ID!, deckName: String!): Deck
     addCardToDeck(deckId: ID!, card: CardInput): CardInfo
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
   }
 `;
 
