@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 export const Signup = () => {
+    const [newUser, { data, loading, error }] = useMutation(ADD_USER);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
     const [username, setUsername] = useState("");
-    const onButtonClick = () => {
+    const onButtonClick = async () => {
         setEmailError("");
         setPasswordError("");
 
@@ -27,6 +30,12 @@ export const Signup = () => {
         if (password.length < 7) {
             setPasswordError("Password must be at least 7 characters");
         }
+        try {
+            const response = await newUser({ variables: { username, email, password } })
+        } catch (error) {
+            throw error.message;
+        }
+
     };
 
     return (

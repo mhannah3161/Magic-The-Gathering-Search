@@ -4,8 +4,7 @@ class AuthService {
     // retrieve data saved in token
     getProfile() {
         return decode(this.getToken());
-    }
-    
+    }   
     // check if the user is still logged in
     loggedIn() {
         // Checks if there is a saved token and it's still valid
