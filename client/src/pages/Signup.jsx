@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 export const Signup = () => {
+    const navigate = useNavigate();
     const [newUser, { data, loading, error }] = useMutation(ADD_USER);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -32,6 +33,7 @@ export const Signup = () => {
         }
         try {
             const response = await newUser({ variables: { username, email, password } });
+            navigate('/login');
         } catch (error) {
             throw error.message;
         }
