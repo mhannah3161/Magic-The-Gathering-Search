@@ -6,9 +6,8 @@ import Collapse from '@mui/material/Collapse';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import comingSoon from '../pics/ComingSoon.png';
-import Auth from '../utils/auth';
 
-export default function CheckboxesTags({ selectedTheme }) {
+export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
   const [selectedColors, setSelectedColors] = React.useState([]);
   const [selectedRarity, setSelectedRarity] = React.useState(null);
   const [searchInput, setSearchInput] = React.useState('');
@@ -21,9 +20,6 @@ export default function CheckboxesTags({ selectedTheme }) {
   const [selectedCardImages, setSelectedCardImages] = React.useState([]);
   const [searchMenuOpen, setSearchMenuOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const isLoggedIn = Auth.loggedIn();
-
-  const [deck, setDeck] = React.useState([]);
 
   React.useEffect(() => {
     // Fetch colors and rarities when the component mounts
@@ -62,16 +58,11 @@ export default function CheckboxesTags({ selectedTheme }) {
     handleMenuClose();
   };
 
- const handleMenuItemClick = (option) => {
-  if (option === 'Add to Deck') {
-    // Add the selected card to the deck
-    const selectedCard = 
-    setDeck((prevDeck) => [...prevDeck, selectedCard]);
-  }
-
-  // Close the menu
-  handleMenuClose();
-};
+  const handleMenuItemClick = (option) => {
+    console.log(`Selected option: ${option}`);
+    // Add logic to handle the selected menu item (e.g., Add to Deck or Add to Collection)
+    handleMenuClose();
+  };
 
   const isMenuOpen = Boolean(anchorEl);
 

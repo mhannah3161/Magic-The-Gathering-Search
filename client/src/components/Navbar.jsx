@@ -29,6 +29,11 @@ export default function Navbar({ selectedTheme, setSelectedTheme }) {
                   Decks
                 </Link>
               </Button>
+              <Button variant="contained" sx={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+                <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/ProfilePage">
+                  Profile
+                </Link>
+              </Button>
             </>
           ) : (
             <Button variant="contained" sx={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav navbuts">
