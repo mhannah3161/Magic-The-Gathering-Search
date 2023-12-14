@@ -4,14 +4,13 @@ import Button from "@mui/material/Button";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
-const Login = (props) => {
-  const [formState, setFormState] = useState({ username: '', password: '' });
+const Login = (props, selectedTheme) => {
+  const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -21,7 +20,6 @@ const Login = (props) => {
     });
   };
 
-  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -35,65 +33,136 @@ const Login = (props) => {
       console.error(e);
     }
 
-    // clear form values
     setFormState({
-      username: '',
-      password: '',
+      username: "",
+      password: "",
     });
   };
 
   return (
     <>
-      <div>
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
         {data ? (
-          <p>
+          <p style={{ color: "green", fontWeight: "bold", fontSize: "1.2rem" }}>
             Success! You may now head{" "}
-            <Link to="/">back to the homepage.</Link>
+            <Link
+              to="/"
+              style={{ color: "#3498db", textDecoration: "underline" }}
+            >
+              back to the homepage.
+            </Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit}>
-          <div className="form-wrapper loginPage">
-            <div>
-              <input
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <TextField
                 className="form-input"
                 name="username"
-                type="username"
+                type="text"
                 value={formState.username}
-                placeholder="Username"
+                label="Username"
                 onChange={handleChange}
-                size="large" />
-            </div>
-            <div>
-              <input
+                size="large"
+                fullWidth
+                style={{
+                  marginBottom: "15px",
+                  borderRadius: "5px",
+                  backgroundColor: "#ecf0f1",
+                  padding: "10px",
+                }}
+              />
+              <TextField
                 className="form-input"
                 name="password"
-                type="password" 
+                type="password"
                 value={formState.password}
-                placeholder="Password"
+                label="Password"
                 onChange={handleChange}
-                size="large" />
+                size="large"
+                fullWidth
+                style={{
+                  marginBottom: "15px",
+                  borderRadius: "5px",
+                  backgroundColor: "#ecf0f1",
+                  padding: "10px",
+                }}
+              />
             </div>
-          </div>
-          <div className="button-wrapper">
-            <Button type="primary" size="large">
-              Login
-            </Button>
-          </div>
-        </form>
+            <div style={{ marginTop: "20px" }}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                size="large"
+                style={{
+                  backgroundColor: "#3498db",
+                  borderRadius: "5px",
+                  padding: "10px 20px",
+                }}
+              >
+                Login
+              </Button>
+            </div>
+          </form>
         )}
-        
       </div>
       <br />
-      <Box display="flex" flexDirection="row" justifyContent="center">
-
-      <p style={{ backgroundColor: "blue", color:"white", width: "200px", borderRadius: "20px", padding:"10px"}}>
-        Don't have an account? 
-      </p>
-      <Link to="/Signup" style={{ backgroundColor: "white", color: "green", marginLeft:"10px", borderRadius: "5px", padding: "3px", textDecoration: "none"}}>Signup!</Link>
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
+        mt={2}
+      >
+        <p
+          style={{
+            backgroundColor: "#34495e",
+            color: "white",
+            width: "200px",
+            border: "10px",
+            borderColor: "selectedTheme.colors.color",
+            borderRadius: "5px",
+            padding: "10px",
+            textAlign: "center",
+            fontSize: "1rem",
+            fontFamily: "sans-serif",
+          }}
+        >
+          <Link
+          
+            to="/Signup"
+            style={{
+              color: "white",
+              marginLeft: "10px",
+              borderRadius: "20px",
+              padding: "3px",
+              textDecoration: "none",
+              fontFamily: "sans-serif",
+            }}
+          >
+             Don't have an account? <br/>Signup!
+          </Link>
+        </p>
       </Box>
-
-      <p>
-        <Link to="/">Back to Home</Link>
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "20px",
+          backgroundColor: "#34495e",
+          width: "100px",
+          color: "white",
+          borderRadius: "5px",
+          padding: "10px",
+        }}
+      >
+        <Link to="/" style={{ textDecoration: "none", color:"white", fontFamily: "sans-serif" }}>
+          Back to Home
+        </Link>
       </p>
     </>
   );
