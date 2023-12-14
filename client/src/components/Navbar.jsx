@@ -12,16 +12,8 @@ export default function Navbar({ selectedTheme, setSelectedTheme, isLoggedIn }) 
         <Dropdown selectedTheme={selectedTheme} setSelectedTheme={setSelectedTheme} />
         <Box display="flex" flexDirection="row" className="navbuts" md={{ flexDirection: 'column' }}>
           <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
-            Logout
-          </Button>
-          <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
-            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/collections">
-              Collections
-            </Link>
-          </Button>
-          <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
-            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/decks">
-              Decks
+            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/login">
+              Login!
             </Link>
           </Button>
           <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
@@ -30,9 +22,17 @@ export default function Navbar({ selectedTheme, setSelectedTheme, isLoggedIn }) 
             </Link>
           </Button>
           <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
-            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/login">
-              Login!
+            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/decks">
+              Decks
             </Link>
+          </Button>
+          <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+            <Link className="linkStyle" style={{ color: selectedTheme.colors.colorText }} to="/collections">
+              Collections
+            </Link>
+          </Button>
+          <Button variant="contained" style={{ backgroundColor: selectedTheme.colors["button-color"] }} className="buttonNav">
+            Logout
           </Button>
         </Box>
       </Box>
