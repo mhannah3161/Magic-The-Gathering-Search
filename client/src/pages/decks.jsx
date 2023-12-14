@@ -9,8 +9,9 @@ import Auth from "../utils/auth";
 const DeckPage = ({ selectedTheme }) => {
   const username = Auth.getUsername();
   const { data } = useQuery(QUERY_DECK, { variables: { username: username } });
+  console.log(data);
   const decks = data?.getDeck || [];
-
+  console.log(decks);
   return (
     <Box width="90%" height="500px" marginLeft="50px">
       <div style={{backgroundColor: selectedTheme.colors["background-color"], height:"100%", border:"Solid", borderColor: selectedTheme.colors["button-color"]}}>
@@ -18,13 +19,15 @@ const DeckPage = ({ selectedTheme }) => {
       <h1>{username}'s Decks</h1>
       <div className="mainbox">
         <div>
-          {Array.isArray(data) && data.length > 0 ? (
-            data.map((item, index) => (
+          {decks.length > 0 ? (
+            decks.map((deck, index) => (
               <div key={index} className="card">
-                <img src={item.image} alt={item.name} />
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-                <p>{item.price}</p>
+                <p>{deck.deckName}</p>
+                {deck.deck_cards.map((card, cardIndex) => (
+                  <div key={cardIndex}>
+                    <p>{card.card_name}</p>
+                  </div>
+                ))}
               </div>
             ))
             ) : (

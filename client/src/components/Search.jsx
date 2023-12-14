@@ -6,8 +6,9 @@ import Collapse from '@mui/material/Collapse';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import comingSoon from '../pics/ComingSoon.png';
+import Auth from '../utils/auth';
 
-export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
+export default function CheckboxesTags({ selectedTheme }) {
   const [selectedColors, setSelectedColors] = React.useState([]);
   const [selectedRarity, setSelectedRarity] = React.useState(null);
   const [searchInput, setSearchInput] = React.useState('');
@@ -20,6 +21,7 @@ export default function CheckboxesTags({ selectedTheme, isLoggedIn }) {
   const [selectedCardImages, setSelectedCardImages] = React.useState([]);
   const [searchMenuOpen, setSearchMenuOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const isLoggedIn = Auth.loggedIn();
 
   const [deck, setDeck] = React.useState([]);
 
