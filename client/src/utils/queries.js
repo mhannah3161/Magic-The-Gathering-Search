@@ -31,9 +31,6 @@ query getCollection($username: String!) {
 export const QUERY_DECK = gql`
 query getDeck($username: String!) {
     getDeck(username: $username) {
-      username
-      decks {
-        deck_id
         deckName
         deck_cards {
           card_name
@@ -47,5 +44,4 @@ query getDeck($username: String!) {
           card_artist
         }
       }
-    }
   }`;

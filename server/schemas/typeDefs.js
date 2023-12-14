@@ -18,7 +18,7 @@ const typeDefs = `
   }
 
   type Deck {
-    deck_id: ID
+    _id: ID
     deckName: String
     deck_cards: [CardInfo]
   }
@@ -53,7 +53,7 @@ const typeDefs = `
   type Mutation {
     createCollection(username: String! collectionName: String!): Collection
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo
-    createDeck(_id: ID!, deckName: String!): Deck
+    createDeck(username: String!, deckName: String!): Deck
     addCardToDeck(deckId: ID!, card: CardInput): CardInfo
     login(username: String!, password: String!): TokenResponse
   }
