@@ -1,6 +1,7 @@
 const { Collection, Deck, User, CardInfo } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+const bcrypt = require('bcryptjs');
 
 
 const resolvers = {
@@ -151,15 +152,22 @@ const resolvers = {
         try {
           // Find the user by username
           const user = await User.findOne({ username });
-
-          // If the user is not found or the password is incorrect, throw AuthenticationError
-          if (!user || user.password !== password) {
-            throw AuthenticationError;
+  
+          // If the user is not found, throw AuthenticationError
+          if (!user) {
+            throw new AuthenticationError('No user found with this username');
           }
-
-          // Generate and return a JWT token
-          const token = signToken(user);
-          return { token };
+  
+          // Check bcrypt-hashed password
+          if (bcrypt.compareSync(password, user.password)) {
+            // Password is correct
+            // Generate and return a JWT token
+            const token = signToken(user);
+            return { token };
+          } else {
+            // Incorrect password
+            throw new AuthenticationError('Incorrect password');
+          }
         } catch (error) {
           throw new Error(`Error during login: ${error.message}`);
         }
