@@ -4,17 +4,26 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    getUserById: async (parent, { _id }) => {
+    getUserByUsername: async (parent, { username }) => {
       try {
-        // Find a user by _id
-        const user = await User.find({ _id })
-          .populate('collections')
-          .populate('decks');
+        // Find the user by username and populate collections and decks
+        const user = await User.findOne({ username })
+          .populate({
+            path: 'collections',
+            populate: { path: 'collection_cards' }
+          })
+          .populate({
+            path: 'decks',
+            populate: { path: 'deck_cards' }
+          });
 
-        // Return the user
+        if (!user) {
+          throw new AuthenticationError('No user found with this username');
+        }
+
         return user;
       } catch (error) {
-        throw new Error(`Error fetching user by id: ${error.message}`);
+        throw new Error(`Error getting user by username: ${error.message}`);
       }
     },
   },

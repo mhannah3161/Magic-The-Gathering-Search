@@ -39,8 +39,23 @@ class AuthService {
     login(idToken) {
         // Saves user token to localStorage
         localStorage.setItem('id_token', idToken);
+    
+        // Decode the token to get user information
+        const userData = decode(idToken);
+    
+        // Save additional user information (e.g., username) to localStorage
+        localStorage.setItem('user_data', JSON.stringify(userData));
+    
+        // Redirect to the homepage or handle the login completion as needed
         window.location.assign('/');
-    }
+      }
+    
+      // get username from localStorage
+      getUsername() {
+        const userData = localStorage.getItem('user_data');
+        return userData ? JSON.parse(userData).username : null;
+      }
+    
     
     // clear token from localStorage and force logout with reload
     logout() {
