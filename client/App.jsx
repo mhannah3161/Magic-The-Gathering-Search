@@ -79,7 +79,7 @@ const App = () => {
             path="/login"
             element={
               <>
-                <Login />
+                <Login selectedTheme={selectedTheme} />
                 <Outlet />
               </>
             }
