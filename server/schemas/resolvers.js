@@ -43,6 +43,21 @@ const resolvers = {
       } catch (error) {
         throw new Error(`Error getting collection: ${error.message}`);
       }
+    },
+    getDeck: async (parent, { username }) => {
+      try {
+        const user = await User.findOne({ username })
+          .populate({
+            path: 'decks',
+            populate: { path: 'deck_cards' }
+          });
+        if (!user) {
+          throw new AuthenticationError('No user found with this username');
+        }
+        return user.decks;
+      } catch (error) {
+        throw new Error(`Error getting deck: ${error.message}`);
+      }
     }
   },
     Mutation: {
@@ -84,13 +99,20 @@ const resolvers = {
           throw new Error(`Error adding card to collection: ${error.message}`);
         }
       },
-      createDeck: async (parent, { _id, deckName }) => {
+      createDeck: async (parent, { username, deckName }) => {
         try {
           // Create a new Deck
-          const deck = new Deck({ _id, deckName });
+          const deck = new Deck({ username, deckName });
 
           // Save the Deck to the database
           await deck.save();
+
+          // Push the Deck to the User's decks array
+          await User.findOneAndUpdate(
+            { username },
+            { $push: { decks: deck._id } },
+            { new: true }
+          );
 
           // Return the Deck
           return deck;
