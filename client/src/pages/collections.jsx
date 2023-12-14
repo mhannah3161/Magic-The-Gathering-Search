@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { QUERY_COLLECTION } from '../utils/queries';
+import Auth from '../utils/auth';
 
-const CollectionsPage = ({ data }) => {
+
+const CollectionsPage = () => {
+  const username = Auth.getUsername();
+  const { data } = useQuery(QUERY_COLLECTION, { variables: { username: username } });
+  const collections = data?.getCollection?.collections || [];
+
+  useEffect(() => {
+    document.title = 'Collections';
+  }, []);
+
   return (
     <div>
-      <h1>Username's Collection Name</h1>
+      <h1>{username}'s Collections</h1>
       <div className="mainbox">
         <div>
-          {Array.isArray(data) && data.length > 0 ? (
-            data.map((item, index) => (
+          {collections.length > 0 ? (
+            collections.map((collection, index) => (
               <div key={index} className="card">
-                <img src={item.image} alt={item.name} />
-                <p>{item.name}</p>
-                <p>{item.description}</p>
-                <p>{item.price}</p>
+                {/* Render collection details here */}
+                <p>{collection.collectionName}</p>
+                {/* ... other collection details ... */}
+                {collection.collection_cards.map((card, cardIndex) => (
+                  <div key={cardIndex}>
+                    <p>{card.card_name}</p>
+                    {/* ... other card details ... */}
+                  </div>
+                ))}
               </div>
             ))
           ) : (
-        <p>MF collections page</p>
+            <h3>You haven't added any collections yet!</h3>
           )}
         </div>
       </div>
