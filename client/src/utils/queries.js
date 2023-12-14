@@ -1,12 +1,33 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
-mutation Mutation($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
-      token
-      user {
-        _id
-        username
+query getUserByUsername($username: String!) {
+    getUserByUsername(username: $username) {
+      _id
+      username
+      email
+      password
+    } 
+  }`;
+
+export const QUERY_COLLECTION = gql`
+query getCollection($username: String!) {
+    getCollection(username: $username) {
+      username
+      collections {
+        collection_id
+        collectionName
+        collection_cards {
+          card_name
+          card_set
+          card_type
+          card_subtype
+          card_mana
+          card_rarity
+          card_pt
+          card_pic
+          card_artist
+        }
       }
     }
   }`;
