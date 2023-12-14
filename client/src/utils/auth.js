@@ -53,7 +53,12 @@ class AuthService {
       // get username from localStorage
       getUsername() {
         const userData = localStorage.getItem('user_data');
-        return userData ? JSON.parse(userData).username : null;
+      
+        // Check if userData exists and has a username field
+        const username = userData ? (JSON.parse(userData).data.username || null) : null;
+      
+        console.log("username: ", username);
+        return username;
       }
     
     
@@ -61,6 +66,7 @@ class AuthService {
     logout() {
         // Clear user token and profile data from localStorage
         localStorage.removeItem('id_token');
+        localStorage.removeItem('user_data');
         // this will reload the page and reset the state of the application
         window.location.assign('/');
     }
