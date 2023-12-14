@@ -1,6 +1,3 @@
-const { Collection, Deck, User, CardInfo } = require('../models');
-const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -61,6 +58,15 @@ const resolvers = {
     }
   },
     Mutation: {
+      createUser: async (parent, { username, password, email }) => {
+        try {
+          const user = new User({ username, password, email });
+          await user.save();
+          return user;
+        } catch (error) {
+          throw new Error(`Error creating user: ${error.message}`);
+        }
+      },
       createCollection: async (parent, { username, collectionName }) => {
         try {
           // Create a new Collection

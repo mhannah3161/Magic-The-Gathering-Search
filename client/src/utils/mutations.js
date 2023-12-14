@@ -7,14 +7,6 @@ mutation login($username: String!, $password: String!) {
       }
   }`;
 
-export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      }
-  }`;
-
-
 export const ADD_CARD = gql`
 mutation saveCard($card: CardInput!) {
     saveCard(card: $card) {
@@ -57,5 +49,15 @@ mutation createDeck($deckName: String!) {
     createDeck(deckName: $deckName) {
       deckName
       }
+  }`;
+
+  export const ADD_USER = gql`
+  mutation createUser($username: String!, $password: String!, $email: String!) {
+    createUser(username: $username, password: $password, email: $email) {
+      _id
+      username
+      password
+      email
+    }
   }`;
 

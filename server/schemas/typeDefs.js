@@ -56,6 +56,7 @@ const typeDefs = `
   }
 
   type Mutation {
+    createUser(username: String!, password: String!, email: String!): User
     createCollection(username: String! collectionName: String!): Collection
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo
     createDeck(username: String!, deckName: String!): Deck
