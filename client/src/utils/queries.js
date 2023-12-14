@@ -13,9 +13,6 @@ query getUserByUsername($username: String!) {
 export const QUERY_COLLECTION = gql`
 query getCollection($username: String!) {
     getCollection(username: $username) {
-      username
-      collections {
-        collection_id
         collectionName
         collection_cards {
           card_name
@@ -28,7 +25,6 @@ query getCollection($username: String!) {
           card_pic
           card_artist
         }
-      }
     }
   }`;
 
