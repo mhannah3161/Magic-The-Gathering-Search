@@ -53,6 +53,11 @@ const typeDefs = `
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo
     createDeck(_id: ID!, deckName: String!): Deck
     addCardToDeck(deckId: ID!, card: CardInput): CardInfo
+    login(username: String!, password: String!): TokenResponse
+  }
+
+  type TokenResponse {
+    token: String
   }
 `;
 
