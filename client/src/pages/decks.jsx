@@ -28,7 +28,7 @@ const DeckPage = ({ selectedTheme }) => {
               </div>
             ))
             ) : (
-              <p>MF deck page</p>
+              <p>You currently have no decks!</p>
               )}
         </div>
       </div>

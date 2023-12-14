@@ -12,7 +12,7 @@ const typeDefs = `
   }
 
   type Collection {
-    collection_id: ID
+    _id: ID
     collectionName: String
     collection_cards: [CardInfo]
   }
@@ -46,6 +46,8 @@ const typeDefs = `
 
   type Query {
     getUserByUsername(username: String!): User
+    getCollection(username: String!): [Collection]
+    getDeck(username: String!): [Deck]
   }
 
   type Auth {
@@ -54,7 +56,7 @@ const typeDefs = `
   }
 
   type Mutation {
-    createCollection(_id: ID!, collectionName: String!): Collection
+    createCollection(username: String! collectionName: String!): Collection
     addCardToCollection(collectionId: ID!, card: CardInput): CardInfo
     createDeck(_id: ID!, deckName: String!): Deck
     addCardToDeck(deckId: ID!, card: CardInput): CardInfo
