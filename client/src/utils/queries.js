@@ -31,3 +31,25 @@ query getCollection($username: String!) {
       }
     }
   }`;
+
+export const QUERY_DECK = gql`
+query getDeck($username: String!) {
+    getDeck(username: $username) {
+      username
+      decks {
+        deck_id
+        deckName
+        deck_cards {
+          card_name
+          card_set
+          card_type
+          card_subtype
+          card_mana
+          card_rarity
+          card_pt
+          card_pic
+          card_artist
+        }
+      }
+    }
+  }`;
